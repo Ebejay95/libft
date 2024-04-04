@@ -6,71 +6,97 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/03/21 12:15:18 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/05 01:35:57 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
+
 CODEDIRS=.
 CC=cc
 CFLAGS= -Wall -Wextra -Werror
 DEPFLAGS= -MP -MD
-CFILES= ft_bzero.c \
-ft_atoi.c \
-ft_itoa.c \
-ft_calloc.c \
-ft_strdup.c \
-ft_strjoin.c \
-ft_strtrim.c \
-ft_substr.c \
-ft_isalnum.c \
-ft_isalpha.c \
-ft_isascii.c \
-ft_isdigit.c \
-ft_isprint.c \
-ft_memchr.c \
-ft_memcpy.c \
-ft_memcmp.c \
-ft_memmove.c \
-ft_memset.c \
-ft_strbase.c \
-ft_strchr.c \
-ft_strlcat.c \
-ft_strlcpy.c \
-ft_strlen.c \
-ft_strrchr.c \
-ft_tolower.c \
-ft_toupper.c \
-ft_str_is_unique.c \
-ft_strncmp.c \
-ft_strstr.c \
-ft_strnstr.c \
-ft_split.c \
-ft_strrev.c \
-ft_putchar.c \
-ft_putstr.c \
-ft_putendl.c \
-ft_putnbr.c \
-ft_putnbrr.c \
-ft_putunbrr.c \
-ft_putchar_fd.c \
-ft_putstr_fd.c \
-ft_putendl_fd.c \
-ft_putnbr_fd.c \
-ft_strmapi.c \
-ft_striteri.c \
-ft_strreplace.c
-BONUSFILES=  ft_lstnew.c \
-ft_lstadd_front.c \
-ft_lstsize.c \
-ft_lstlast.c \
-ft_lstadd_back.c \
-ft_lstdelone.c \
-ft_lstclear.c \
-ft_lstmap.c \
-ft_lstiter.c
+
+ANALYZER_SRCS= \
+./analyzer/ft_isalnum.c \
+./analyzer/ft_isalpha.c \
+./analyzer/ft_isascii.c \
+./analyzer/ft_isdigit.c \
+./analyzer/ft_isprint.c \
+./analyzer/ft_str_is_unique.c \
+./analyzer/ft_strchr.c \
+./analyzer/ft_strcontains.c \
+./analyzer/ft_strlen.c \
+./analyzer/ft_strncmp.c \
+./analyzer/ft_strnstr.c \
+./analyzer/ft_strrchr.c \
+./analyzer/ft_strstr.c \
+./analyzer/ft_substr.c
+
+CONVERTER_SRCS= \
+./converter/ft_atoi.c \
+./converter/ft_itoa.c \
+./converter/ft_strbase.c
+
+LISTS_SRCS= \
+./lists/ft_lstadd_back.c \
+./lists/ft_lstadd_front.c \
+./lists/ft_lstclear.c \
+./lists/ft_lstdelone.c \
+./lists/ft_lstiter.c \
+./lists/ft_lstlast.c \
+./lists/ft_lstmap.c \
+./lists/ft_lstnew.c \
+./lists/ft_lstsize.c
+
+MEMORY_SRCS= \
+./memory/ft_bzero.c \
+./memory/ft_calloc.c \
+./memory/ft_memchr.c \
+./memory/ft_memcmp.c \
+./memory/ft_memcpy.c \
+./memory/ft_memmove.c \
+./memory/ft_memset.c \
+./memory/ft_smartfree.c
+
+PRINTS_SRCS= \
+./prints/ft_printf.c \
+./prints/ft_putchar_fd.c \
+./prints/ft_putchar.c \
+./prints/ft_putcharr_fd.c \
+./prints/ft_putcharr.c \
+./prints/ft_putendl_fd.c \
+./prints/ft_putendl.c \
+./prints/ft_putnbr_fd.c \
+./prints/ft_putnbr.c \
+./prints/ft_putnbrr.c \
+./prints/ft_putstr_fd.c \
+./prints/ft_putstr.c \
+./prints/ft_putstrr.c \
+./prints/ft_putunbr.c \
+./prints/ft_putunbrr.c \
+./prints/get_next_line_utils.c \
+./prints/get_next_line.c \
+./prints/smart_prints_1.c \
+./prints/smart_prints_2.c
+
+STRINGS_SRCS= \
+./strings/ft_split.c \
+./strings/ft_strdup.c \
+./strings/ft_striteri.c \
+./strings/ft_strjoin.c \
+./strings/ft_strlcat.c \
+./strings/ft_strlcpy.c \
+./strings/ft_strmapi.c \
+./strings/ft_strreplace.c \
+./strings/ft_strreplaceall.c \
+./strings/ft_strrev.c \
+./strings/ft_strtrim.c \
+./strings/ft_tolower.c \
+./strings/ft_toupper.c
+
+CFILES= $(ANALYZER_SRCS) $(CONVERTER_SRCS) $(LISTS_SRCS) $(MEMORY_SRCS) $(PRINTS_SRCS) $(STRINGS_SRCS)
 OBJECTS=$(CFILES:.c=.o)
-BONUSOBJECTS=$(BONUSFILES:.c=.o)
 DEPFILES=libft.h
 
 .PHONY:	all clean fclean re bonus
@@ -83,11 +109,8 @@ $(NAME): $(OBJECTS)
 %.o:%.c
 	$(CC) $(CFLAGS) -c -o $@ $^
 
-bonus: $(OBJECTS) $(BONUSOBJECTS)
-	ar rs $(NAME) $(OBJECTS) $(BONUSOBJECTS)
-
 clean:
-	rm -rf $(OBJECTS) $(BONUSOBJECTS)
+	rm -rf $(OBJECTS)
 
 fclean: clean
 	rm -rf $(NAME)
