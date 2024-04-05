@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 09:13:39 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 09:38:34 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/05 18:29:38 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /// @param ptr 	the pointer as a reference
 /// @param size the to be allocated size
 /// @return 	a new pointer woth the old content cpoied and size requested
-void	*realloc(void *ptr, size_t size)
+void	*ft_realloc(void *ptr, size_t size)
 {
 	void	*alloc;
 
