@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:29:55 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 01:45:06 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/05 09:14:47 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*join_work = '\0';
 	return (join);
 }
-
