@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 09:13:39 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 09:38:34 by jeberle          ###   ########.fr       */
+/*   Created: 2024/04/05 10:10:41 by jeberle           #+#    #+#             */
+/*   Updated: 2024/04/05 16:09:47 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-/// @brief 		reallocate more memory at a pointer
-/// @param ptr 	the pointer as a reference
-/// @param size the to be allocated size
-/// @return 	a new pointer woth the old content cpoied and size requested
-void	*realloc(void *ptr, size_t size)
+size_t	ft_strspn(const char *s, const char *charset)
 {
-	void	*alloc;
+	size_t	span;
+	size_t	set;
+	size_t	is;
 
-	if (ptr == NULL)
+	span = 0;
+	while (s[span] != '\0')
 	{
-		alloc = ft_calloc(size, 1);
-		if (!alloc)
-			return (NULL);
+		is = 0;
+		set = 0;
+		while (charset[set] != '\0')
+		{
+			if (charset[set] == s[span])
+				is = 1;
+			set++;
+		}
+		if (is == 0)
+			break ;
+		span++;
 	}
-	else
-	{
-		alloc = ft_calloc(size, 1);
-		ft_memcpy(alloc, ptr, size);
-		free(ptr);
-	}
-	return (alloc);
+	return (span);
 }

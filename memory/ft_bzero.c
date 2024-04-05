@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 09:44:55 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 00:55:29 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/05 14:12:33 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_bzero(void *start, size_t size)
 {
 	char	*work;
 
+	if (start == NULL)
+		return ;
 	work = start;
 	while (size > 0)
 	{

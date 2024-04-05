@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/05 01:35:57 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/05 16:26:11 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,14 @@ ANALYZER_SRCS= \
 ./analyzer/ft_isprint.c \
 ./analyzer/ft_str_is_unique.c \
 ./analyzer/ft_strchr.c \
+./analyzer/ft_strcmp.c \
 ./analyzer/ft_strcontains.c \
 ./analyzer/ft_strlen.c \
 ./analyzer/ft_strncmp.c \
 ./analyzer/ft_strnstr.c \
+./analyzer/ft_strpbrk.c \
 ./analyzer/ft_strrchr.c \
+./analyzer/ft_strspn.c \
 ./analyzer/ft_strstr.c \
 ./analyzer/ft_substr.c
 
@@ -52,12 +55,14 @@ LISTS_SRCS= \
 MEMORY_SRCS= \
 ./memory/ft_bzero.c \
 ./memory/ft_calloc.c \
+./memory/ft_getenv.c \
 ./memory/ft_memchr.c \
 ./memory/ft_memcmp.c \
 ./memory/ft_memcpy.c \
 ./memory/ft_memmove.c \
 ./memory/ft_memset.c \
-./memory/ft_smartfree.c
+./memory/ft_realloc.c \
+./memory/ft_smartfree.c \
 
 PRINTS_SRCS= \
 ./prints/ft_printf.c \
@@ -67,6 +72,7 @@ PRINTS_SRCS= \
 ./prints/ft_putcharr.c \
 ./prints/ft_putendl_fd.c \
 ./prints/ft_putendl.c \
+./prints/ft_putenv.c \
 ./prints/ft_putnbr_fd.c \
 ./prints/ft_putnbr.c \
 ./prints/ft_putnbrr.c \
@@ -81,6 +87,7 @@ PRINTS_SRCS= \
 ./prints/smart_prints_2.c
 
 STRINGS_SRCS= \
+./strings/ft_strcpy.c \
 ./strings/ft_split.c \
 ./strings/ft_strdup.c \
 ./strings/ft_striteri.c \

@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 21:19:52 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 01:43:28 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/05 16:28:44 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@
 ///				2<	to file in writing status
 int	ft_putstrr(char *s)
 {
+	int	count;
+
+	count = 0;
 	while (*s != '\0')
 	{
 		if (write(1, s, 1) < 0)
 			return (-1);
 		s++;
+		count++;
 	}
-	return (1);
+	return (count);
 }

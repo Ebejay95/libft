@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_getenv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 09:13:39 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 09:38:34 by jeberle          ###   ########.fr       */
+/*   Created: 2024/04/05 10:31:54 by jeberle           #+#    #+#             */
+/*   Updated: 2024/04/05 16:26:50 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-/// @brief 		reallocate more memory at a pointer
-/// @param ptr 	the pointer as a reference
-/// @param size the to be allocated size
-/// @return 	a new pointer woth the old content cpoied and size requested
-void	*realloc(void *ptr, size_t size)
+char	*ft_getenv(const char *name)
 {
-	void	*alloc;
+	extern char	**environ;
+	int			i;
+	int			vlen;
+	char		*spanname;
 
-	if (ptr == NULL)
+	i = 0;
+	while (environ[i] != NULL)
 	{
-		alloc = ft_calloc(size, 1);
-		if (!alloc)
-			return (NULL);
+		spanname = ft_strchr(environ[i], '=');
+		if (spanname != NULL)
+		{
+			vlen = spanname - environ[i];
+			if (ft_strncmp(environ[i], name, vlen) == 0 && name[vlen] == '\0')
+				return (ft_strdup(spanname + 1));
+		}
+		i++;
 	}
-	else
-	{
-		alloc = ft_calloc(size, 1);
-		ft_memcpy(alloc, ptr, size);
-		free(ptr);
-	}
-	return (alloc);
+	return (NULL);
 }
