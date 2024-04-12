@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/11 17:56:48 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/12 16:12:33 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,13 +85,10 @@ char	*ft_itoa(int n);
 char	*ft_strbase(unsigned long long input, const char *base);
 
 // LISTS
-//t_list *ft_lstfind(t_list *lst, void *content, int (*cmp)(void *, void *));
-//void ft_lstinsert_after(t_list *lst, t_list *new);
 //void ft_lstinsert_before(t_list **dlst, t_list *next, t_list *new);
 //void ft_lstremove(t_list **lst, t_list *to_remove, void (*del)(void *));
 //t_list *ft_lstmerge(t_list *first, t_list *second);
 //void ft_lstsort(t_list **lst, int (*cmp)(void *, void *));
-//void  ft_lst_remove_if(t_list **lst, void *data_ref, int (*cmp)(void *, void *));
 //void	ft_dlstadd_back(t_dlist **dlst, t_dlist *new);
 //void	ft_dlstadd_front(t_dlist **dlst, t_dlist *new);
 //void	ft_dlstclear(t_dlist **dlst, void (*del)(void *));
@@ -105,12 +102,14 @@ char	*ft_strbase(unsigned long long input, const char *base);
 //void ft_dlstinsert_after(t_dlist *dlst, t_dlist *new);
 //void ft_dlstinsert_before(t_dlist **dlst, t_list *next, t_list *new);
 //void ft_dlstremove(t_dlist **dlst, t_dlist *to_remove, void (*del)(void *));
-//t_dlist *ft_lstmerge(t_dlist *first, t_dlist *second);
-//void ft_lstsort(t_dlist **dlst, int (*cmp)(void *, void *));
+//t_dlist *ft_dlstmerge(t_dlist *first, t_dlist *second);
+//void ft_dlstsort(t_dlist **dlst, int (*cmp)(void *, void *));
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
+t_list	**ft_lstfind(t_list **lst, void *content, int (*cmp)(void *, void *));
+void	ft_lstinsert_after(t_list **lst, t_list *next, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));

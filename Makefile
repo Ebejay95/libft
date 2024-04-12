@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/05 16:26:11 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/12 15:43:34 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,8 @@ LISTS_SRCS= \
 ./lists/ft_lstadd_front.c \
 ./lists/ft_lstclear.c \
 ./lists/ft_lstdelone.c \
+./lists/ft_lstfind.c \
+./lists/ft_lstinsert_after.c \
 ./lists/ft_lstiter.c \
 ./lists/ft_lstlast.c \
 ./lists/ft_lstmap.c \
