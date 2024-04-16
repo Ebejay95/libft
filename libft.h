@@ -6,7 +6,7 @@
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/16 21:39:29 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/04/16 21:43:02 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,14 +89,10 @@ char	*ft_strbase(unsigned long long input, const char *base);
 //void ft_lstremove(t_list **lst, t_list *to_remove, void (*del)(void *));
 //t_list *ft_lstmerge(t_list *first, t_list *second);
 //void ft_lstsort(t_list **lst, int (*cmp)(void *, void *));
-//void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 //void	ft_dlstclear(t_dlist **lst, void (*del)(void *));
 //void	ft_dlstdelone(t_dlist *dlst, void (*del)(void *));
 //void	ft_dlstiter(t_dlist *dlst, void (*f)(void *));
-//t_dlist	*ft_dlstlast(t_dlist *lst);
 //t_dlist	*ft_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *));
-//t_dlist	*ft_dlstnew(void *content);
-//int		ft_dlstsize(t_dlist *dlst);
 //t_dlist *ft_dlstfind(t_dlist *dlst, void *content, int (*cmp)(void *, void *));
 //void ft_dlstinsert_after(t_dlist *dlst, t_dlist *new);
 //void ft_dlstinsert_before(t_dlist **lst, t_list *next, t_list *new);
