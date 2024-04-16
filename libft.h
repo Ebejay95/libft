@@ -6,7 +6,7 @@
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/16 21:27:40 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/04/16 21:39:29 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ void	ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 t_dlist	*ft_dlstlast(t_dlist *lst);
 t_dlist	*ft_dlstnew(void *content);
+void	ft_dlstput(t_dlist **lst, void (*listprint)(void *));
 void    ft_dlstrotate(t_dlist **lst, int n, int direction);
 int		ft_dlstsize(t_dlist *dlst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -118,6 +119,8 @@ void	ft_lstinsert_after(t_list **lst, t_list *next, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_lstput(t_list **lst, void (*listprint)(void *));
+void    ft_lstrotate(t_list **lst, int n, int direction);
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 

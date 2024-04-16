@@ -6,7 +6,7 @@
 #    By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/16 21:29:17 by jonathanebe      ###   ########.fr        #
+#    Updated: 2024/04/16 21:38:22 by jonathanebe      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ LISTS_SRCS= \
 ./lists/ft_dlstadd_front.c \
 ./lists/ft_dlstlast.c \
 ./lists/ft_dlstnew.c \
+./lists/ft_dlstput.c \
 ./lists/ft_dlstrotate.c \
 ./lists/ft_dlstsize.c \
 ./lists/ft_lstadd_back.c \
@@ -58,6 +59,8 @@ LISTS_SRCS= \
 ./lists/ft_lstlast.c \
 ./lists/ft_lstmap.c \
 ./lists/ft_lstnew.c \
+./lists/ft_lstput.c \
+./lists/ft_lstrotate.c \
 ./lists/ft_lstsize.c
 
 MEMORY_SRCS= \
