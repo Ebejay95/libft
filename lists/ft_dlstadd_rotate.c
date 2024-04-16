@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstrotate.c                                     :+:      :+:    :+:   */
+/*   ft_dlstadd_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 15:00:33 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/16 20:59:02 by jonathanebe      ###   ########.fr       */
+/*   Created: 2024/04/16 20:57:19 by jonathanebe       #+#    #+#             */
+/*   Updated: 2024/04/16 20:57:41 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-void    ft_lstrotate(t_list **lst, int n, int direction)
+void    ft_dlstadd_rotate(t_dlist **dlst, int n, int direction)
 {
-    t_list *tail;
-    t_list *new_head;
+    t_dlist *tail;
+    t_dlist *new_head;
     int     len;
 	int		j;
-    if (!lst || !*lst || n == 0)
+    if (!dlst || !*dlst || n == 0)
         return;
 
-    len = ft_lstsize(*lst);
+    len = ft_dlstsize(*dlst);
     n = n % len;
     if (n == 0)
         return;
@@ -29,7 +29,7 @@ void    ft_lstrotate(t_list **lst, int n, int direction)
         n = len - n;
     if (n == 0)
         return;
-    t_dlist *current = *lst;
+    t_dlist *current = *dlst;
 	j = 0;
     while (j < len - n - 1)
 	{
@@ -37,10 +37,13 @@ void    ft_lstrotate(t_list **lst, int n, int direction)
 		j++;
 	}
     new_head = current->next;
+    current->next->prev = NULL;
     current->next = NULL;
 	if(new_head != NULL)
 	{
-    	tail->next = *lst;
-    	(*lst) = new_head;
+    	tail = (*dlst)->prev;
+    	tail->next = *dlst;
+    	(*dlst)->prev = tail;
+    	(*dlst) = new_head;
 	}
 }
