@@ -5,41 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 15:01:29 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/13 15:01:50 by jonathanebe      ###   ########.fr       */
+/*   Created: 2024/04/16 20:57:19 by jonathanebe       #+#    #+#             */
+/*   Updated: 2024/04/16 21:28:13 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    rotate_dlist(t_dlist **dlst, int n, int direction)
+#include "./../libft.h"
+
+void    ft_dlstrotate(t_dlist **lst, int n, int direction)
 {
-    t_dlist *tail, *new_head;
+    t_dlist *tail;
+    t_dlist *new_head;
     int     len;
-
-    if (!dlst || !*dlst || n == 0) // Keine Aktion nötig, wenn Liste leer oder keine Rotation
+	int		j;
+    if (!lst || !*lst || n == 0)
         return;
 
-    len = ft_dlstsize(*dlst); // Verwende vorhandene Funktion, um die Länge zu berechnen
-    n = n % len; // Reduziere n auf sinnvolle Werte
+    len = ft_dlstsize(*lst);
+    n = n % len;
     if (n == 0)
         return;
-
-    if (i == 1)  // Richtung der Rotation: 0 = vorwärts, 1 = rückwärts
+    if (direction == 1)
         n = len - n;
-
     if (n == 0)
         return;
-
-    // Gehe zur Trennstelle
-    t_dlist *current = *dlst;
-    for (int j = 0; j < len - n - 1; j++)
+    t_dlist *current = *lst;
+	j = 0;
+    while (j < len - n - 1)
+	{
         current = current->next;
-
-    new_head = current->next; // Neuer Kopf der Liste
-    current->next = NULL; // Altes Ende der Liste
-    new_head->prev = NULL;
-
-    tail = (*dlst)->prev; // Alter Kopf der Liste
-    tail->next = *dlst; // Verbinde das alte Ende mit dem alten Kopf
-    (*dlst)->prev = tail;
-    *dlst = new_head; // Aktualisiere den Listenkopf
+		j++;
+	}
+    new_head = current->next;
+    current->next->prev = NULL;
+    current->next = NULL;
+	if(new_head != NULL)
+	{
+    	tail = (*lst)->prev;
+    	tail->next = *lst;
+    	(*lst)->prev = tail;
+    	(*lst) = new_head;
+	}
 }
