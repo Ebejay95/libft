@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/17 15:22:36 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/17 15:37:15 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,6 +195,8 @@ void	*ft_memset(void *start, int fill, size_t size);
 
 // MATH
 int ft_abs(int n);
+int ft_even(int n);
+int ft_odd(int n);
 //int ft_isprime(int n);
 //double ft_pow(double base, double exponent);
 //double ft_sqrt(double x);

@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/17 15:26:52 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/17 15:39:10 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -117,6 +117,8 @@ STRINGS_SRCS= \
 
 MATH_SRCS= \
 ./math/ft_abs.c \
+./math/ft_even.c \
+./math/ft_odd.c \
 
 CFILES= $(ANALYZER_SRCS) $(CONVERTER_SRCS) $(LISTS_SRCS) $(MEMORY_SRCS) $(PRINTS_SRCS) $(STRINGS_SRCS) $(MATH_SRCS)
 OBJECTS=$(CFILES:.c=.o)
