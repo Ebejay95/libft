@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstadd_front.c                                 :+:      :+:    :+:   */
+/*   ft_dlstdelone.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 14:21:02 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/17 08:05:13 by jeberle          ###   ########.fr       */
+/*   Created: 2024/04/17 08:52:18 by jeberle           #+#    #+#             */
+/*   Updated: 2024/04/17 08:53:24 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../libft.h"
-
-void	ft_dlstadd_front(t_dlist **lst, t_dlist *new)
+void	ft_dlstdelone(t_dlist *lst, void (*del)(void *))
 {
-	if (new == NULL || lst == NULL)
+	if (lst == NULL || del == NULL)
 		return ;
-	if (*lst)
-   		(*lst)->prev = new;
-	new->prev = NULL;
-	new->next = *lst;
-	*lst = new;
+	del(lst->content);
+	free(lst);
 }
