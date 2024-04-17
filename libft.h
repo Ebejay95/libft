@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/17 08:56:55 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/17 08:59:10 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char	*ft_strbase(unsigned long long input, const char *base);
 //void ft_dlstsort(t_dlist **lst, int (*cmp)(void *, void *));
 void	ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
-void	ft_lstclear(t_dlist **lst, void (*del)(void *));
+void	ft_dlstclear(t_dlist **lst, void (*del)(void *));
 void	ft_dlstdelone(t_dlist *lst, void (*del)(void *));
 t_dlist	*ft_dlstlast(t_dlist *lst);
 t_dlist	*ft_dlstnew(void *content);

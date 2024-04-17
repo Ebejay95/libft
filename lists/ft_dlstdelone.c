@@ -6,9 +6,11 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:52:18 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/17 08:53:24 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/17 08:59:48 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "./../libft.h"
 
 void	ft_dlstdelone(t_dlist *lst, void (*del)(void *))
 {

@@ -6,11 +6,13 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:51:02 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/17 08:55:18 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/17 09:00:09 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstclear(t_dlist **lst, void (*del)(void *))
+#include "./../libft.h"
+
+void	ft_dlstclear(t_dlist **lst, void (*del)(void *))
 {
 	t_dlist	*buffer;
 
