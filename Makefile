@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/18 17:55:25 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/18 18:02:12 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -142,7 +142,7 @@ $(NAME): $(OBJECTS)
 	@$(CC) $(CFLAGS) $(DEPFLAGS) -c -o $@ $<
 
 clean:
-	@rm -rf $(OBJECTS) $(OBJECTS:.o=.d)
+	@rm -rf $(OBJECTS)
 	@echo "\033[31mobjects deleted\033[31m"
 
 fclean: clean
