@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/18 08:55:32 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/18 10:29:56 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,8 @@ MATH_SRCS= \
 ./math/ft_abs.c \
 ./math/ft_even.c \
 ./math/ft_ggt.c \
+./math/ft_isneg.c \
+./math/ft_ispos.c \
 ./math/ft_kgv.c \
 ./math/ft_odd.c \
 

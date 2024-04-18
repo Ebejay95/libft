@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/18 09:04:43 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/18 10:28:58 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,8 @@ int		ft_lstsize(t_list *lst);
 int ft_abs(int n);
 int ft_even(int n);
 int	ft_ggt(int a, int b);
+int	ft_isneg(int n);
+int	ft_ispos(int n);
 int	ft_kgv(int a, int b);
 int ft_odd(int n);
 //int ft_isprime(int n);
