@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/17 15:37:15 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/18 09:04:43 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,40 @@ void    ft_lstrotate(t_list **lst, int n, int direction);
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
+// MATH
+int ft_abs(int n);
+int ft_even(int n);
+int	ft_ggt(int a, int b);
+int	ft_kgv(int a, int b);
+int ft_odd(int n);
+//int ft_isprime(int n);
+//double ft_pow(double base, double exponent);
+//double ft_sqrt(double x);
+//double ft_log(double x);
+//double ft_log10(double x);
+//double ft_fabs(double x);
+//double ft_mean(double *array, size_t length);
+//double ft_median(double *array, size_t length);
+//double ft_stddev(double *array, size_t length);
+//double ft_variance(double *array, size_t length);
+//void ft_vec_add(double *result, const double *a, const double *b, size_t n);
+//void ft_vec_scalar_mul(double *result, const double *a, double scalar, size_t n);
+//void ft_vec_cross(double result[3], const double a[3], const double b[3]);
+//double ft_vec_dot(const double *a, const double *b, size_t n);
+//void ft_matrix_add(double **result, double **a, double **b, size_t rows, size_t cols);
+//void ft_matrix_mul(double **result, double **a, double **b, size_t a_rows, size_t a_cols, size_t b_cols);
+//double ft_matrix_det2x2(double **matrix);
+//double ft_matrix_det3x3(double **matrix);
+//void ft_matrix_transpose(double **result, double **matrix, size_t rows, size_t cols);
+//void ft_srand(unsigned int seed);
+//int ft_rand(void);
+//int ft_rand_range(int min, int max) {
+//    return min + ft_rand() % (max - min + 1);
+//}
+//double ft_rand_double(void) {
+//    return ft_rand() / ((double)RAND_MAX + 1);
+//}
+
 // MEMORY
 //void *ft_aligned_alloc(size_t alignment, size_t size);
 //void ft_memcheck(const void *ptr, const char *file, int line);
@@ -145,6 +179,7 @@ int		ft_unsetenv(const char *name);
 // PRINTS
 // all for error fd unified naming and suppert for fd's return etc TDO ERROR
 int		ft_printf(const char *text, ...);
+void	ft_putbits(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putchar(char c);
 int		ft_putcharr_fd(char c, int fd);
@@ -192,38 +227,6 @@ char	*build_line(char *workstring);
 char	*build_workstring(int fd, char *workstring, int *state, char *range);
 char	*prep_next(char *workstring);
 void	*ft_memset(void *start, int fill, size_t size);
-
-// MATH
-int ft_abs(int n);
-int ft_even(int n);
-int ft_odd(int n);
-//int ft_isprime(int n);
-//double ft_pow(double base, double exponent);
-//double ft_sqrt(double x);
-//double ft_log(double x);
-//double ft_log10(double x);
-//double ft_fabs(double x);
-//double ft_mean(double *array, size_t length);
-//double ft_median(double *array, size_t length);
-//double ft_stddev(double *array, size_t length);
-//double ft_variance(double *array, size_t length);
-//void ft_vec_add(double *result, const double *a, const double *b, size_t n);
-//void ft_vec_scalar_mul(double *result, const double *a, double scalar, size_t n);
-//void ft_vec_cross(double result[3], const double a[3], const double b[3]);
-//double ft_vec_dot(const double *a, const double *b, size_t n);
-//void ft_matrix_add(double **result, double **a, double **b, size_t rows, size_t cols);
-//void ft_matrix_mul(double **result, double **a, double **b, size_t a_rows, size_t a_cols, size_t b_cols);
-//double ft_matrix_det2x2(double **matrix);
-//double ft_matrix_det3x3(double **matrix);
-//void ft_matrix_transpose(double **result, double **matrix, size_t rows, size_t cols);
-//void ft_srand(unsigned int seed);
-//int ft_rand(void);
-//int ft_rand_range(int min, int max) {
-//    return min + ft_rand() % (max - min + 1);
-//}
-//double ft_rand_double(void) {
-//    return ft_rand() / ((double)RAND_MAX + 1);
-//}
 
 // FILE_HANDLING
 //int ft_open(const char *filename, int mode);

@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/17 15:39:10 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/18 08:55:32 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,13 @@ LISTS_SRCS= \
 ./lists/ft_lstrotate.c \
 ./lists/ft_lstsize.c
 
+MATH_SRCS= \
+./math/ft_abs.c \
+./math/ft_even.c \
+./math/ft_ggt.c \
+./math/ft_kgv.c \
+./math/ft_odd.c \
+
 MEMORY_SRCS= \
 ./memory/ft_bzero.c \
 ./memory/ft_calloc.c \
@@ -79,6 +86,7 @@ MEMORY_SRCS= \
 
 PRINTS_SRCS= \
 ./prints/ft_printf.c \
+./prints/ft_putbits.c \
 ./prints/ft_putchar_fd.c \
 ./prints/ft_putchar.c \
 ./prints/ft_putcharr_fd.c \
@@ -115,12 +123,7 @@ STRINGS_SRCS= \
 ./strings/ft_tolower.c \
 ./strings/ft_toupper.c
 
-MATH_SRCS= \
-./math/ft_abs.c \
-./math/ft_even.c \
-./math/ft_odd.c \
-
-CFILES= $(ANALYZER_SRCS) $(CONVERTER_SRCS) $(LISTS_SRCS) $(MEMORY_SRCS) $(PRINTS_SRCS) $(STRINGS_SRCS) $(MATH_SRCS)
+CFILES= $(ANALYZER_SRCS) $(CONVERTER_SRCS) $(LISTS_SRCS) $(MATH_SRCS) $(MEMORY_SRCS) $(PRINTS_SRCS) $(STRINGS_SRCS)
 OBJECTS=$(CFILES:.c=.o)
 DEPFILES=libft.h
 
