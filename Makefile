@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/18 10:29:56 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/18 17:16:42 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,15 +134,19 @@ DEPFILES=libft.h
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar rs $(NAME) $(OBJECTS)
+	@echo "\033[33mmake libft\033[0m"
+	@ar rs $(NAME) $(OBJECTS) > /dev/null 2>&1
+	@echo "\033[32mSUCCESS!!\033[0m"
 
 %.o:%.c
-	$(CC) $(CFLAGS) -c -o $@ $^
+	@$(CC) $(CFLAGS) $(DEPFLAGS) -c -o $@ $<
 
 clean:
-	rm -rf $(OBJECTS)
+	@rm -rf $(OBJECTS)
+	@echo "\033[31mobjects deleted\033[31m"
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "\033[31mlibft deleted\033[31m"
 
 re: fclean all
