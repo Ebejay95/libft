@@ -49,11 +49,6 @@
     <header>
         <h1>Libft Project</h1>
     </header>
-    <article>
-        <section>
-            <h2>About the Project</h2>
-            <p>The Libft project is a comprehensive library of C functions frequently needed in software development projects. This library was created by <code>jeberle</code> and includes a wide range of functions for strings, memory operations, lists, and more.</p>
-        </section>
-    </article>
+	<img src="https://drive.google.com/file/d/1-E4aGOF6b7QlLYKciohSh6JpopESwnu1/view?usp=sharing">
 </body>
 </html>
