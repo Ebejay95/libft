@@ -49,6 +49,6 @@
     <header>
         <h1>Libft Project</h1>
     </header>
-	<img src="https://drive.google.com/file/d/1-E4aGOF6b7QlLYKciohSh6JpopESwnu1/view?usp=sharing">
+	<img src="https://drive.google.com/file/d/1-E4aGOF6b7QlLYKciohSh6JpopESwnu1/view?usp=drive_link">
 </body>
 </html>
