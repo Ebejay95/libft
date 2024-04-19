@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/18 18:10:27 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/19 08:39:36 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -131,7 +131,7 @@ DEPFILES=libft.h
 
 .PHONY:	all clean fclean re bonus
 
-all: precompile $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	@ar rs $(NAME) $(OBJECTS) > /dev/null 2>&1
@@ -149,6 +149,3 @@ fclean: clean
 	@echo "\033[31mlibft deleted\033[31m"
 
 re: fclean all
-
-precompile:
-	@echo "\033[33mmake libft\033[0m"
