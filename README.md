@@ -1,4 +1,4 @@
-![Libft Image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3gOnS8dkzrKSbpnJSdDuQg.png)
+![Libft Image](https://i.imgflip.com/6vumy5.jpg)
 
 # Libft
 
