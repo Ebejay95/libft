@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:57:19 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/19 15:35:07 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/19 15:38:41 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void    ft_dlstrotateleft(t_dlist **lst, int n)
 		tail->next = head;
 		(*lst) = head->next;
 		(*lst)->prev = NULL;
-		head->next = NULL;
 		tail->prev->next = NULL;
-		head->prev = tail;
+		tail->prev = head;      
+		head->prev = NULL; 
 		n--;
 	}
 }
