@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/19 08:39:36 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/19 08:42:21 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -135,17 +135,17 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	@ar rs $(NAME) $(OBJECTS) > /dev/null 2>&1
-	@echo "\033[32mSUCCESS!!\033[0m"
+	@echo "\033[32mSUCCESS: libft\033[0m"
 
 %.o:%.c
 	@$(CC) $(CFLAGS) $(DEPFLAGS) -c -o $@ $<
 
 clean:
 	@rm -rf $(OBJECTS) $(OBJECTS:.o=.d)
-	@echo "\033[31mobjects deleted\033[31m"
+	@echo "\033[31mobjects deleted\033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "\033[31mlibft deleted\033[31m"
+	@echo "\033[31mlibft deleted\033[0m"
 
 re: fclean all
