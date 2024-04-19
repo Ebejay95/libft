@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/18 10:28:58 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/19 10:13:37 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,7 @@ char	*ft_smartfree(char *s, int proc);
 int		ft_unsetenv(const char *name);
 
 // PRINTS
-// all for error fd unified naming and suppert for fd's return etc TDO ERROR
+// all for error fd unified naming and suppert for fd's return etc TDO ERROR (perror)
 int		ft_printf(const char *text, ...);
 void	ft_putbits(int n);
 void	ft_putchar_fd(char c, int fd);
