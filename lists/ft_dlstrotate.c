@@ -6,64 +6,8 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:57:19 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/25 00:40:04 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/25 00:49:54 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
-
-static void	ft_dlstrotateleft(t_dlist **lst, int n)
-{
-	t_dlist	*head;
-	t_dlist	*tail;
-
-	while (n != 0)
-	{
-		if (!(*lst) || !(*lst)->next)
-			return ;
-		head = (*lst);
-		tail = ft_dlstlast((*lst));
-		tail->next = head;
-		head->prev = tail;
-		(*lst) = head->next;
-		(*lst)->prev = NULL;
-		head->next = NULL;
-		n--;
-	}
-}
-
-static void	ft_dlstrotateright(t_dlist **lst, int n)
-{
-	t_dlist	*head;
-	t_dlist	*tail;
-
-	while (n != 0)
-	{
-		if (!(*lst) || !(*lst)->next)
-			return ;
-		tail = ft_dlstlast((*lst));
-		head = (*lst);
-		head->prev = tail;
-		tail->next = head;
-		tail->prev->next = NULL;
-		(*lst) = tail;
-		n--;
-	}
-}
-
-void	ft_dlstrotate(t_dlist **lst, int n, int direction)
-{
-	int	len;
-
-	//// TODO - rewrite
-	if (!lst || !*lst || n == 0)
-		return ;
-	len = ft_dlstsize(*lst);
-	n = n % len;
-	if (n == 0)
-		return ;
-	if (direction > 0)
-		ft_dlstrotateleft(lst, n);
-	else
-		ft_dlstrotateright(lst, n);
-}
