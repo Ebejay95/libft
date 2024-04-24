@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:57:19 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/24 10:43:43 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/24 10:44:50 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ void    ft_dlstrotate(t_dlist **lst, int n, int direction)
         return;
     if (direction > 0)
         ft_dlstrotateleft(lst, n);
-	else:
+	else
         ft_dlstrotateright(lst, n);
 }
