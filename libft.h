@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/19 13:32:30 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/24 15:35:00 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	ft_dlstclear(t_dlist **lst, void (*del)(void *));
 void	ft_dlstdelone(t_dlist *lst, void (*del)(void *));
 t_dlist	*ft_dlstlast(t_dlist *lst);
 t_dlist	*ft_dlstnew(void *content);
-void	ft_dlstput(t_dlist **lst, void (*listprint)(void *));
+void	ft_dlstput(t_dlist **lst, void (*listprint)(void *), char sep);
 void    ft_dlstrotate(t_dlist **lst, int n, int direction);
 int		ft_dlstsize(t_dlist *dlst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
