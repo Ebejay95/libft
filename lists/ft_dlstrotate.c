@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:57:19 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/19 15:52:21 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/24 10:01:25 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void    ft_dlstrotateleft(t_dlist **lst, int n)
 {
+	ft_printf("ft_dlstrotateleft");
 	t_dlist *head;
 	t_dlist *tail;
 
@@ -34,6 +35,7 @@ void    ft_dlstrotateleft(t_dlist **lst, int n)
 }
 void    ft_dlstrotateright(t_dlist **lst, int n)
 {
+	ft_printf("ft_dlstrotateright");
 	t_dlist *head;
 	t_dlist *tail;
 
