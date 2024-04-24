@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:54:06 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/18 09:13:34 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/25 00:24:41 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@
 
 int	ft_kgv(int a, int b)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	if ((a == 0) || (b == 0))
 		return (0);
-	return ((a / ft_ggt(a,b)) * b);
+	return ((a / ft_ggt(a, b)) * b);
 }

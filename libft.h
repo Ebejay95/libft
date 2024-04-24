@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/24 15:35:00 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/25 00:46:47 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,10 @@ char	*ft_strbase(unsigned long long input, const char *base);
 //void ft_lstremove(t_list **lst, t_list *to_remove, void (*del)(void *));
 //t_list *ft_lstmerge(t_list *first, t_list *second);
 //void ft_lstsort(t_list **lst, int (*cmp)(void *, void *));
-//void	ft_dlstclear(t_dlist **lst, void (*del)(void *));
 //void	ft_dlstdelone(t_dlist *dlst, void (*del)(void *));
 //void	ft_dlstiter(t_dlist *dlst, void (*f)(void *));
-//t_dlist	*ft_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *));
-//t_dlist *ft_dlstfind(t_dlist *dlst, void *content, int (*cmp)(void *, void *));
+//	*ft_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *));
+// *ft_dlstfind(t_dlist *dlst, void *content, int (*cmp)(void *, void *));
 //void ft_dlstinsert_after(t_dlist *dlst, t_dlist *new);
 //void ft_dlstinsert_before(t_dlist **lst, t_list *next, t_list *new);
 //void ft_dlstremove(t_dlist **lst, t_dlist *to_remove, void (*del)(void *));
@@ -105,7 +104,7 @@ void	ft_dlstdelone(t_dlist *lst, void (*del)(void *));
 t_dlist	*ft_dlstlast(t_dlist *lst);
 t_dlist	*ft_dlstnew(void *content);
 void	ft_dlstput(t_dlist **lst, void (*listprint)(void *), char sep);
-void    ft_dlstrotate(t_dlist **lst, int n, int direction);
+void	ft_dlstrotate(t_dlist **lst, int n, int direction);
 int		ft_dlstsize(t_dlist *dlst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -116,19 +115,19 @@ void	ft_lstinsert_after(t_list **lst, t_list *next, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-void	ft_lstput(t_list **lst, void (*listprint)(void *));
-void    ft_lstrotate(t_list **lst, int n, int direction);
+void	ft_lstput(t_list **lst, void (*listprint)(void *), char sep);
+void	ft_lstrotate(t_list **lst, int n, int direction);
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
 // MATH
-int ft_abs(int n);
-int ft_even(int n);
-int	ft_ggt(int a, int b);
-int	ft_isneg(int n);
-int	ft_ispos(int n);
-int	ft_kgv(int a, int b);
-int ft_odd(int n);
+int		ft_abs(int n);
+int		ft_even(int n);
+int		ft_ggt(int a, int b);
+int		ft_isneg(int n);
+int		ft_ispos(int n);
+int		ft_kgv(int a, int b);
+int		ft_odd(int n);
 //int ft_isprime(int n);
 //double ft_pow(double base, double exponent);
 //double ft_sqrt(double x);
@@ -140,14 +139,17 @@ int ft_odd(int n);
 //double ft_stddev(double *array, size_t length);
 //double ft_variance(double *array, size_t length);
 //void ft_vec_add(double *result, const double *a, const double *b, size_t n);
-//void ft_vec_scalar_mul(double *result, const double *a, double scalar, size_t n);
+// ft_vec_scalar_mul(double *result, const double *a, double scalar, size_t n);
 //void ft_vec_cross(double result[3], const double a[3], const double b[3]);
 //double ft_vec_dot(const double *a, const double *b, size_t n);
-//void ft_matrix_add(double **result, double **a, double **b, size_t rows, size_t cols);
-//void ft_matrix_mul(double **result, double **a, double **b, size_t a_rows, size_t a_cols, size_t b_cols);
+//void ft_matrix_add(double **result, double **a, double **b,
+// size_t rows, size_t cols);
+//void ft_matrix_mul(double **result, double **a, double **b,
+// size_t a_rows, size_t a_cols, size_t b_cols);
 //double ft_matrix_det2x2(double **matrix);
 //double ft_matrix_det3x3(double **matrix);
-//void ft_matrix_transpose(double **result, double **matrix, size_t rows, size_t cols);
+//void ft_matrix_transpose(double **result, double **matrix,
+//size_t rows, size_t cols);
 //void ft_srand(unsigned int seed);
 //int ft_rand(void);
 //int ft_rand_range(int min, int max) {
@@ -160,7 +162,8 @@ int ft_odd(int n);
 // MEMORY
 //void *ft_aligned_alloc(size_t alignment, size_t size);
 //void ft_memcheck(const void *ptr, const char *file, int line);
-//void *ft_memcpy_safe(void *destination, const void *source, size_t size, size_t dest_size);
+//void *ft_memcpy_safe(void *destination, const void *source, 
+//size_t size, size_t dest_size);
 //void ft_memswap(void *ptr1, void *ptr2, size_t size);
 //void ft_memtrack_start(void);
 //void ft_memtrack_stop(void);
@@ -179,7 +182,8 @@ char	*ft_smartfree(char *s, int proc);
 int		ft_unsetenv(const char *name);
 
 // PRINTS
-// all for error fd unified naming and suppert for fd's return etc TDO ERROR (perror)
+// all for error fd unified naming and suppert for fd's return 
+//etc TDO ERROR (perror)
 int		ft_printf(const char *text, ...);
 void	ft_putbits(int n);
 void	ft_putchar_fd(char c, int fd);
@@ -246,8 +250,10 @@ void	*ft_memset(void *start, int fill, size_t size);
 //ssize_t ft_send(int sockfd, const void *buf, size_t len, int flags);
 //ssize_t ft_recv(int sockfd, void *buf, size_t len, int flags);
 //int ft_close(int sockfd);
-//ssize_t ft_sendto(int sockfd, const void *buf, size_t len, int flags, const struct sockaddr *dest_addr, socklen_t addrlen);
-//ssize_t ft_recvfrom(int sockfd, void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen);
+//ssize_t ft_sendto(int sockfd, const void *buf, size_t len, int flags, 
+//const struct sockaddr *dest_addr, socklen_t addrlen);
+//ssize_t ft_recvfrom(int sockfd, void *buf, size_t len, int flags, struct 
+//sockaddr *src_addr, socklen_t *addrlen);
 
 // TIME
 //double ft_time_seconds(void);
@@ -257,8 +263,10 @@ void	*ft_memset(void *start, int fill, size_t size);
 // HASH
 //unsigned long ft_hash_string(const char *str);
 //int ft_levenshtein(const char *s1, const char *s2);
-//char *ft_base64_encode(const unsigned char *data, size_t input_length, size_t *output_length);
-//unsigned char *ft_base64_decode(const char *data, size_t input_length, size_t *output_length);
+//char *ft_base64_encode(const unsigned char *data, size_t input_length, 
+//size_t *output_length);
+//unsigned char *ft_base64_decode(const char *data, size_t input_length, 
+//size_t *output_length);
 
 // BINARY_TREE
 //typedef struct s_btree {
@@ -267,9 +275,11 @@ void	*ft_memset(void *start, int fill, size_t size);
 //    struct s_btree *right;
 //} t_btree;
 //void ft_btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));
-//t_btree *ft_btree_search(t_btree *root, void *data_ref, int (*cmpf)(void *, void *));
+//t_btree *ft_btree_search(t_btree *root, void *data_ref, 
+//int (*cmpf)(void *, void *));
 //void ft_btree_inorder(t_btree *root, void (*applyf)(void *));
-//void ft_btree_remove(t_btree **root, void *data_ref, int (*cmpf)(void *, void *), void (*freef)(void *));
+//void ft_btree_remove(t_btree **root, void *data_ref, int (*cmpf)(void *,/
+//void *), void (*freef)(void *));
 
 // HASH_TABLE
 //typedef struct s_hashnode {
@@ -338,5 +348,6 @@ void	*ft_memset(void *start, int fill, size_t size);
 //void ft_graph_add_edge(t_graph *graph, int start, int end, int weight);
 //void ft_graph_remove_edge(t_graph *graph, int start, int end);
 //bool ft_graph_dfs(t_graph *graph, int start_node_id, int target_node_id);
-//void ft_graph_bfs(t_graph *graph, int start_node_id, void (*visit_func)(int node_id, void *content));
+//void ft_graph_bfs(t_graph *graph, int start_node_id, void (*visit_func)(int
+// node_id, void *content));
 #endif

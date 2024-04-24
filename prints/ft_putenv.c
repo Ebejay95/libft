@@ -6,13 +6,13 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 10:32:13 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 16:26:54 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/25 00:47:11 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-int	ft_putenv(char *string)
+int	ft_putenv(char *str)
 {
 	extern char	**environ;
 	int			i;
@@ -26,7 +26,7 @@ int	ft_putenv(char *string)
 		if (spanname != NULL)
 		{
 			vlen = spanname - environ[i];
-			if (ft_strncmp(environ[i], string, vlen) == 0 && string[vlen] == '\0')
+			if (ft_strncmp(environ[i], str, vlen) == 0 && str[vlen] == '\0')
 				return (ft_putstrr(spanname + 1));
 		}
 		i++;

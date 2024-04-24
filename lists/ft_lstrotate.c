@@ -3,46 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstrotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 15:00:33 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/16 21:49:30 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/04/25 00:35:22 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-void    ft_lstrotate(t_list **lst, int n, int direction)
+static void	ft_lstrotateleft(t_list **lst, int n)
 {
-    t_list *tail = NULL;
-    t_list *new_head;
-    t_list *current;
-    int     len;
-	int		j;
-    if (!lst || !*lst || n == 0)
-        return;
+	t_list	*head;
+	t_list	*tail;
 
-    len = ft_lstsize(*lst);
-    n = n % len;
-    if (n == 0)
-        return;
-    if (direction == 1)
-        n = len - n;
-    if (n == 0)
-        return;
-	j = 0;
-	current = NULL;
-	*current = **lst;
-    while (j < len - n - 1)
+	while (n != 0)
 	{
-        current = current->next;
-		j++;
+		if (!(*lst) || !(*lst)->next)
+			return ;
+		head = (*lst);
+		tail = ft_lstlast((*lst));
+		tail->next = head;
+		(*lst) = head->next;
+		head->next = NULL;
+		n--;
 	}
-    new_head = current->next;
-    current->next = NULL;
-	if(new_head != NULL)
+}
+
+static void	ft_lstrotateright(t_list **lst, int n)
+{
+	t_list	*head;
+	t_list	*tail;
+
+	while (n != 0)
 	{
-    	tail->next = *lst;
-    	(*lst) = new_head;
+		if (!(*lst) || !(*lst)->next)
+			return ;
+		tail = ft_lstlast((*lst));
+		head = (*lst);
+		tail->next = head;
+		(*lst) = tail;
+		n--;
 	}
+}
+
+void	ft_lstrotate(t_list **lst, int n, int direction)
+{
+	int	len;
+
+	//// TODO - rewrite
+	if (!lst || !*lst || n == 0)
+		return ;
+	len = ft_lstsize(*lst);
+	n = n % len;
+	if (n == 0)
+		return ;
+	if (direction > 0)
+		ft_lstrotateleft(lst, n);
+	else
+		ft_lstrotateright(lst, n);
 }
