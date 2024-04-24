@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/25 00:46:47 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/25 01:11:55 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,10 @@ void	ft_lstinsert_after(t_list **lst, t_list *next, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstpenultimate(t_list *lst);
 void	ft_lstput(t_list **lst, void (*listprint)(void *), char sep);
 void	ft_lstrotate(t_list **lst, int n, int direction);
-t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
 // MATH
