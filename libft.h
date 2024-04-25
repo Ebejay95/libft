@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/25 01:11:55 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/25 13:56:04 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,6 +212,7 @@ char	*get_next_line(int fd);
 //char *ft_strchrnul(const char *s, int c);
 //char *ft_strpbrk(const char *s, const char *accept);
 //char *ft_strndup(const char *s1, size_t n);
+size_t	ft_count_words(char const *s, char c);
 size_t	ft_strcpy(char *trg, const char *src);
 size_t	ft_strlcat(char *trg, const char *src, size_t size);
 size_t	ft_strlcpy(char *trg, const char *src, size_t size);
