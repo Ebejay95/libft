@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 21:00:51 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 21:16:01 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ static int	ft_overflowhandler(long long *i, int *e, const char *str, int *ms)
 	ax = (long long)INT_MAX;
 	in = (long long)INT_MIN;
 	if (*ms == 1 && (*i > ax / 10 || (*i == ax / 10 && (*str - '0') > ax % 10)))
+	{
 		return (smart_return(ax, e));
+	}
 	else if (*ms == -1)
 	{
 		if (*i > ax / 10 || (*i == ax / 10 && (*str - '0') > 8))
@@ -35,11 +37,8 @@ static int	ft_overflowhandler(long long *i, int *e, const char *str, int *ms)
 		}
 		else if (*i == ax / 10 && (*str - '0') == 8)
 		{
-			if (*i == -214748364)
-			{
-				*i = *i * 10 - (*str - '0');
-				return (*i);
-			}
+			*i = in;
+			return (in);
 		}
 	}
 	return (*i * 10 + (*str - '0') * *ms);
