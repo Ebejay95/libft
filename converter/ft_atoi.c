@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 19:55:38 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 20:06:58 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,29 +20,19 @@ static int	smart_return(int val, int *error)
 
 static int	ft_overflowhandler(long *i, int *error, const char *str, int *ms)
 {
-	int	ax;
-	int	in;
+	long	ax;
+	long	in;
 
-	ax = INT_MAX;
-	in = INT_MIN;
+	ax = (long)INT_MAX;
+	in = (long)INT_MIN;
 	if (*ms == 1 && (*i > ax / 10))
 		return (smart_return(ax, error));
-	else
-	{
-		if (*ms == -1 && (*i > ax / 10))
-			return (smart_return(ax, error));
-		else if (*ms == -1 && (*i == ax / 10 && (*str - '0') > -(in % 10 + 1)))
-			return (smart_return(ax, error));
-	}
-	if (*ms == 1 && (*i == ax / 10 && (*str - '0') > ax % 10))
+	else if (*ms == 1 && (*i == ax / 10 && (*str - '0') > ax % 10))
 		return (smart_return(ax, error));
-	else
-	{
-		if (*ms == -1 && (*i > ax / 10))
-			return (smart_return(ax, error));
-		else if (*ms == -1 && (*i == ax / 10 && (*str - '0') > -(in % 10 + 1)))
-			return (smart_return(ax, error));
-	}
+	else if (*ms == -1 && (*i > ax / 10))
+		return (smart_return(in, error));
+	else if (*ms == -1 && (*i == ax / 10 && (*str - '0') > -(in % 10 + 1)))
+		return (smart_return(in, error));
 	return (*i * 10 + (*str - '0') * *ms);
 }
 
