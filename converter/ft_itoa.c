@@ -6,12 +6,11 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 21:53:03 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 00:55:29 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 19:23:44 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
-#include <stdio.h>
 
 /// @brief 			modify the params of ft_itoa
 ///	@algorithm		1)	declare a int to work with but not lose real int n
