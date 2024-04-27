@@ -6,46 +6,46 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 20:06:58 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 20:18:59 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-static int	smart_return(int val, int *error)
+static int	smart_return(int val, int *e)
 {
-	*error = 1;
+	*e = 1;
 	return (val);
 }
 
-static int	ft_overflowhandler(long *i, int *error, const char *str, int *ms)
+static int	ft_overflowhandler(long long *i, int *e, const char *str, int *ms)
 {
-	long	ax;
-	long	in;
+	long long	ax;
+	long long	in;
 
-	ax = (long)INT_MAX;
-	in = (long)INT_MIN;
+	ax = (long long)INT_MAX;
+	in = (long long)INT_MIN;
 	if (*ms == 1 && (*i > ax / 10))
-		return (smart_return(ax, error));
+		return (smart_return(ax, e));
 	else if (*ms == 1 && (*i == ax / 10 && (*str - '0') > ax % 10))
-		return (smart_return(ax, error));
+		return (smart_return(ax, e));
 	else if (*ms == -1 && (*i > ax / 10))
-		return (smart_return(in, error));
+		return (smart_return(in, e));
 	else if (*ms == -1 && (*i == ax / 10 && (*str - '0') > -(in % 10 + 1)))
-		return (smart_return(in, error));
+		return (smart_return(in, e));
 	return (*i * 10 + (*str - '0') * *ms);
 }
 
-static int	safe_atoi_handler(long *i, int *error, const char *str, int *ms)
+static int	safe_atoi_handler(long long *i, int *e, const char *str, int *ms)
 {
 	while (*str != '\0' && ft_isdigit(*str))
 	{
 		if (*i > INT_MAX / 10)
-			return (ft_overflowhandler(i, error, str, ms));
+			return (ft_overflowhandler(i, e, str, ms));
 		else if (*i == INT_MAX / 10 && ((*str - '0') > INT_MAX % 10))
-			return (ft_overflowhandler(i, error, str, ms));
-		else if ((*str - '0') > -(INT_MIN % 10 + 1))
-			return (ft_overflowhandler(i, error, str, ms));
+			return (ft_overflowhandler(i, e, str, ms));
+		else if (*ms == -1 && (*str - '0') > -(INT_MIN % 10 + 1))
+			return (ft_overflowhandler(i, e, str, ms));
 		*i = *i * 10 + (*str - '0');
 		str++;
 	}
@@ -72,8 +72,8 @@ static int	safe_atoi_handler(long *i, int *error, const char *str, int *ms)
 /// @return 	int i || 0
 int	ft_atoi(const char *str, int *error)
 {
-	long	i;
-	int		ms;
+	long long	i;
+	int			ms;
 
 	*error = 0;
 	i = 0;
