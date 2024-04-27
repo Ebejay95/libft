@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 19:50:01 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 19:55:38 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,28 @@ static int	smart_return(int val, int *error)
 
 static int	ft_overflowhandler(long *i, int *error, const char *str, int *ms)
 {
-	int	max;
-	int	min;
+	int	ax;
+	int	in;
 
-	max = INT_MAX;
-	min = INT_MIN;
-	if (*ms == 1 && (*i > max / 10))
-		return (smart_return(max, error));
+	ax = INT_MAX;
+	in = INT_MIN;
+	if (*ms == 1 && (*i > ax / 10))
+		return (smart_return(ax, error));
 	else
 	{
-		if (*ms == -1 && (*i > max / 10))
-			return (smart_return(max, error));
-		if (*ms == -1 && (*i == max / 10 && (*str - '0') > -(min % 10 + 1)))
-			return (smart_return(max, error));
+		if (*ms == -1 && (*i > ax / 10))
+			return (smart_return(ax, error));
+		else if (*ms == -1 && (*i == ax / 10 && (*str - '0') > -(in % 10 + 1)))
+			return (smart_return(ax, error));
 	}
-	if (*ms == 1 && (*i == max / 10 && (*str - '0') > INT_MAX % 10))
-		return (smart_return(max, error));
+	if (*ms == 1 && (*i == ax / 10 && (*str - '0') > ax % 10))
+		return (smart_return(ax, error));
 	else
 	{
-		if (*ms == -1 && (*i > max / 10))
-			return (smart_return(max, error));
-		if (*ms == -1 && (*i == max / 10 && (*str - '0') > -(min % 10 + 1)))
-			return (smart_return(max, error));
+		if (*ms == -1 && (*i > ax / 10))
+			return (smart_return(ax, error));
+		else if (*ms == -1 && (*i == ax / 10 && (*str - '0') > -(in % 10 + 1)))
+			return (smart_return(ax, error));
 	}
 	return (*i * 10 + (*str - '0') * *ms);
 }
@@ -52,9 +52,9 @@ static int	safe_atoi_handler(long *i, int *error, const char *str, int *ms)
 	{
 		if (*i > INT_MAX / 10)
 			return (ft_overflowhandler(i, error, str, ms));
-		if (*i == INT_MAX / 10 && ((*str - '0') > INT_MAX % 10))
+		else if (*i == INT_MAX / 10 && ((*str - '0') > INT_MAX % 10))
 			return (ft_overflowhandler(i, error, str, ms));
-		if ((*str - '0') > -(INT_MIN % 10 + 1))
+		else if ((*str - '0') > -(INT_MIN % 10 + 1))
 			return (ft_overflowhandler(i, error, str, ms));
 		*i = *i * 10 + (*str - '0');
 		str++;
