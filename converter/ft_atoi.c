@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 20:30:03 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 20:36:03 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,21 @@ static int	ft_overflowhandler(long long *i, int *e, const char *str, int *ms)
 	return (*i * 10 + (*str - '0') * *ms);
 }
 
-static int	safe_atoi_handler(long long *i, int *e, const char *str, int *ms)
+static int	safe_atoi_handler(long long *i, int *e, const char *s, int *ms)
 {
-	while (*str != '\0' && ft_isdigit(*str))
+	long long	a;
+
+	a = (long long)INT_MAX;
+	while (*s != '\0' && ft_isdigit(*s))
 	{
-		if (*i > INT_MAX / 10)
-			return (ft_overflowhandler(i, e, str, ms));
-		else if (*i == INT_MAX / 10 && ((*str - '0') > INT_MAX % 10))
-			return (ft_overflowhandler(i, e, str, ms));
-		else if (*ms == -1 && (*str - '0') > -(INT_MIN % 10 + 1))
-			return (ft_overflowhandler(i, e, str, ms));
-		*i = *i * 10 + (*str - '0');
-		str++;
+		if (*i > a / 10)
+			return (ft_overflowhandler(i, e, s, ms));
+		else if (*i == a / 10 && ((*s - '0') > a % 10))
+			return (ft_overflowhandler(i, e, s, ms));
+		else if (*ms == -1 && (*i > a / 10 || (*i == a / 10 && (*s - '0') > 7)))
+			return (ft_overflowhandler(i, e, s, ms));
+		*i = *i * 10 + (*s - '0');
+		s++;
 	}
 	*i = *i * *ms;
 	return ((int)*i);
