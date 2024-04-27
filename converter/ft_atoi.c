@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 00:55:29 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:59:58 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,24 @@ static int	ft_isspace(char c)
 	if (c == 32 || (c >= 9 && c <= 13))
 		return (1);
 	return (0);
+}
+
+static int	ft_overflowhandler(int i, int *error, const char *str)
+{
+	int	overflow;
+
+	overflow = INT_MAX;
+	if (i > INT_MAX / 10)
+		*error = 1;
+	if (i == INT_MAX / 10)
+	{
+		if ((*str - '0') > INT_MAX % 10 || (*str - '0') > -(INT_MAX % 10))
+		{
+			*error = 1;
+			overflow = INT_MIN;
+		}
+	}
+	return (overflow);
 }
 
 /// @brief 		provides a int by a string that follows a strict format
@@ -41,29 +59,31 @@ static int	ft_isspace(char c)
 ///				
 /// @param str 
 /// @return 	int i || 0
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, int *error)
 {
-	int	i;
-	int	ms;
+	long	i;
+	int		ms;
 
+	*error = 0;
 	i = 0;
-	ms = 0;
+	ms = 1;
 	while (ft_isspace(*str))
 		str++;
 	if (*str == 43 || *str == 45)
 	{
 		if (*str == 45)
-			ms++;
+			ms = -1;
 		str++;
 	}
 	if (!ft_isdigit(*str))
 		return (0);
 	while (*str != '\0' && ft_isdigit(*str))
 	{
+		if (i > INT_MAX / 10 || i == INT_MAX / 10)
+			return (ft_overflowhandler(i, error, str));
 		i = i * 10 + (*str - '0');
 		str++;
 	}
-	if (ms != 0)
-		i = (i * (-1));
-	return (i);
+	i = i * ms;
+	return ((int)i);
 }

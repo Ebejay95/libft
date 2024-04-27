@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/25 13:56:04 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:31:14 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 //double ft_atof(const char *str);
 //char *ft_ulltoa_base(unsigned long long value, const char *base);
 //char *ft_dtoa(double n, unsigned int precision);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, int *error);
 char	*ft_itoa(int n);
 char	*ft_strbase(unsigned long long input, const char *base);
 
