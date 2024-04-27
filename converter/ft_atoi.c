@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 20:56:18 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 21:00:51 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ static int	ft_overflowhandler(long long *i, int *e, const char *str, int *ms)
 		}
 		else if (*i == ax / 10 && (*str - '0') == 8)
 		{
-			if (*i == -214748364 && *str == '8')
+			if (*i == -214748364)
 			{
-				return (smart_return(in, e));
+				*i = *i * 10 - (*str - '0');
+				return (*i);
 			}
 		}
 	}
