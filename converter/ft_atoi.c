@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 22:03:42 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 22:25:15 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,6 @@ int	ft_atoi(const char *str, int *error)
 		str++;
 	}
 	if (!ft_isdigit(*str))
-		return (smart_return(0, e));
+		return (smart_return(0, error));
 	return (safe_atoi_handler(&i, error, str, &ms));
 }
