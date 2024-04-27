@@ -6,37 +6,61 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 19:22:12 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 19:50:01 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-///TODO:		set in own file after evals
-/// @brief		checks if a char is an char declared as a whitespace character
-///				by comparing the ascii int values in their ranges
-/// @param c 	the char to check
-/// @return 	0 || 1 depending on the char
-static int	ft_isspace(char c)
+static int	smart_return(int val, int *error)
 {
-	if (c == 32 || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
+	*error = 1;
+	return (val);
 }
 
-static int	ft_overflowhandler(int i, int *error, const char *str, int ms)
+static int	ft_overflowhandler(long *i, int *error, const char *str, int *ms)
 {
-	if (ms == 1 && (i > INT_MAX / 10 || (i == INT_MAX / 10 && (*str - '0') > INT_MAX % 10)))
+	int	max;
+	int	min;
+
+	max = INT_MAX;
+	min = INT_MIN;
+	if (*ms == 1 && (*i > max / 10))
+		return (smart_return(max, error));
+	else
 	{
-		*error = 1;
-		return (INT_MAX);
+		if (*ms == -1 && (*i > max / 10))
+			return (smart_return(max, error));
+		if (*ms == -1 && (*i == max / 10 && (*str - '0') > -(min % 10 + 1)))
+			return (smart_return(max, error));
 	}
-	else if (ms == -1 && (i > INT_MAX / 10 || (i == INT_MAX / 10 && (*str - '0') > -(INT_MIN % 10 + 1))))
+	if (*ms == 1 && (*i == max / 10 && (*str - '0') > INT_MAX % 10))
+		return (smart_return(max, error));
+	else
 	{
-		*error = 1;
-		return (INT_MIN);
+		if (*ms == -1 && (*i > max / 10))
+			return (smart_return(max, error));
+		if (*ms == -1 && (*i == max / 10 && (*str - '0') > -(min % 10 + 1)))
+			return (smart_return(max, error));
 	}
-	return (i * 10 + (*str - '0') * ms);
+	return (*i * 10 + (*str - '0') * *ms);
+}
+
+static int	safe_atoi_handler(long *i, int *error, const char *str, int *ms)
+{
+	while (*str != '\0' && ft_isdigit(*str))
+	{
+		if (*i > INT_MAX / 10)
+			return (ft_overflowhandler(i, error, str, ms));
+		if (*i == INT_MAX / 10 && ((*str - '0') > INT_MAX % 10))
+			return (ft_overflowhandler(i, error, str, ms));
+		if ((*str - '0') > -(INT_MIN % 10 + 1))
+			return (ft_overflowhandler(i, error, str, ms));
+		*i = *i * 10 + (*str - '0');
+		str++;
+	}
+	*i = *i * *ms;
+	return ((int)*i);
 }
 
 /// @brief 		provides a int by a string that follows a strict format
@@ -74,15 +98,5 @@ int	ft_atoi(const char *str, int *error)
 	}
 	if (!ft_isdigit(*str))
 		return (0);
-	while (*str != '\0' && ft_isdigit(*str))
-	{
-		if (i > INT_MAX / 10 || (i == INT_MAX / 10 && ((*str - '0') > INT_MAX % 10 || (*str - '0') > -(INT_MIN % 10 + 1))))
-		{
-			return (ft_overflowhandler(i, error, str, ms));
-		}
-		i = i * 10 + (*str - '0');
-		str++;
-	}
-	i = i * ms;
-	return ((int)i);
+	return (safe_atoi_handler(&i, error, str, &ms));
 }

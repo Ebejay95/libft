@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/25 13:56:37 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/27 19:31:03 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ ANALYZER_SRCS= \
 ./analyzer/ft_isascii.c \
 ./analyzer/ft_isdigit.c \
 ./analyzer/ft_isprint.c \
+./analyzer/ft_isspace.c \
 ./analyzer/ft_str_is_unique.c \
 ./analyzer/ft_strchr.c \
 ./analyzer/ft_strcmp.c \
