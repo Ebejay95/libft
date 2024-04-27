@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 20:39:34 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 20:44:09 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	safe_atoi_handler(long long *i, int *e, const char *s, int *ms)
 			return (ft_overflowhandler(i, e, s, ms));
 		else if (*i == a / 10 && ((*s - '0') > a % 10))
 			return (ft_overflowhandler(i, e, s, ms));
-		else if (*ms == -1 && (*i > a / 10 || (*i == a / 10 && (*s - '0') > 7)))
+		else if (*ms == -1 && (*i > a / 10 || (*i == a / 10 && (*s - '0') > 8)))
 			return (ft_overflowhandler(i, e, s, ms));
 		*i = *i * 10 + (*s - '0');
 		s++;
