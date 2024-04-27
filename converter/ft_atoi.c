@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 17:59:58 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/27 19:17:00 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,35 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
-static int	ft_overflowhandler(int i, int *error, const char *str)
+static int	ft_overflowhandler(int i, int *error, const char *str, int ms)
 {
-	int	overflow;
-
-	overflow = INT_MAX;
-	if (i > INT_MAX / 10)
-		*error = 1;
-	if (i == INT_MAX / 10)
+	if (ms == 1)
 	{
-		if ((*str - '0') > INT_MAX % 10 || (*str - '0') > -(INT_MAX % 10))
+		if (i > INT_MAX / 10)
 		{
 			*error = 1;
-			overflow = INT_MIN;
+			return (INT_MAX);
+		}
+		if ((i == INT_MAX / 10 && (*str - '0') > INT_MAX % 10))
+		{
+			*error = 1;
+			return (INT_MAX);
 		}
 	}
-	return (overflow);
+	else if (ms == -1)
+	{
+		if (i > INT_MAX / 10)
+		{
+			*error = 1;
+			return (INT_MIN);
+		}
+		if (i == INT_MAX / 10 && (*str - '0') > -(INT_MIN % 10 + 1))
+		{
+			*error = 1;
+			return (INT_MIN);
+		}
+	}
+	return (i * 10 + (*str - '0') * ms);
 }
 
 /// @brief 		provides a int by a string that follows a strict format
@@ -79,8 +92,8 @@ int	ft_atoi(const char *str, int *error)
 		return (0);
 	while (*str != '\0' && ft_isdigit(*str))
 	{
-		if (i > INT_MAX / 10 || i == INT_MAX / 10)
-			return (ft_overflowhandler(i, error, str));
+		if (i > INT_MAX / 10 || (i == INT_MAX / 10 && ((*str - '0') > INT_MAX % 10 || (*str - '0') > -(INT_MIN % 10 + 1))))
+			return (ft_overflowhandler(i, error, str, ms));
 		i = i * 10 + (*str - '0');
 		str++;
 	}
