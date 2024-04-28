@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putbits.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 08:46:27 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/25 00:23:36 by jeberle          ###   ########.fr       */
+/*   Created: 2024/04/27 19:30:19 by jeberle           #+#    #+#             */
+/*   Updated: 2024/04/27 19:45:25 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../libft.h"
-
-void	ft_putbits(int n)
+///TODO:		set in own file after evals
+/// @brief		checks if a char is an char declared as a whitespace character
+///				by comparing the ascii int values in their ranges
+/// @param c 	the char to check
+/// @return 	0 || 1 depending on the char
+int	ft_isspace(char c)
 {
-	int	i;
-
-	i = 7;
-	while (i >= 0)
-	{
-		if (n & (1 << i))
-			write(1, "1", 1);
-		else
-			write(1, "0", 1);
-		i--;
-	}
+	if (c == 32 || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
 }

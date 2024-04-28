@@ -6,61 +6,59 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:57:19 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/19 15:52:21 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/25 01:42:08 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-void    ft_dlstrotateleft(t_dlist **lst, int n)
+static void	swap_front_to_back(t_dlist **lst)
 {
-	t_dlist *head;
-	t_dlist *tail;
+	t_dlist	*front;
+	t_dlist	*back;
 
-	while (n != 0)
-	{
-    	if (!(*lst) || !(*lst)->next)
-        	return;
-		head = (*lst);
-		tail = ft_dlstlast((*lst));
-		tail->next = head;
-		(*lst) = head->next;
-		(*lst)->prev = NULL;
-		tail->prev->next = NULL;
-		tail->prev = head;      
-		head->prev = NULL; 
-		n--;
-	}
+	front = (*lst);
+	back = ft_dlstlast((*lst));
+	back->next = front;
+	front->prev = back;
+	(*lst) = (*lst)->next;
+	(*lst)->prev = NULL;
+	front->next = NULL;
 }
-void    ft_dlstrotateright(t_dlist **lst, int n)
-{
-	t_dlist *head;
-	t_dlist *tail;
 
-	while (n != 0)
+static void	swap_back_to_front(t_dlist **lst)
+{
+	t_dlist	*back;
+
+	back = ft_dlstlast((*lst));
+	(*lst)->prev = back;
+	if (back->prev)
 	{
-    	if (!(*lst) || !(*lst)->next)
-        	return;
-		tail = ft_dlstlast((*lst));
-		head = (*lst);
-		head->prev = tail;
-		tail->next = head;
-		tail->prev->next = NULL;
-		(*lst) = tail;
-		n--;
+		back->prev->next = NULL;
+		back->prev = NULL;
 	}
+	back->next = (*lst);
+	(*lst) = back;
 }
-void    ft_dlstrotate(t_dlist **lst, int n, int direction)
+
+void	ft_dlstrotate(t_dlist **lst, int n, int direction)
 {
-	int len;
-
-    if (!lst || !*lst || n == 0)
-        return;
-
-    len = ft_dlstsize(*lst);
-    n = n % len;
-    if (n == 0)
-        return;
-    if (direction > 0)
-        ft_dlstrotateleft(lst, n);
+	if (lst == NULL || (*lst) == NULL || (*lst)->next == NULL)
+		return ;
+	if (direction > 0)
+	{
+		while (n > 0)
+		{
+			swap_front_to_back(lst);
+			n--;
+		}
+	}
+	else
+	{
+		while (n > 0)
+		{
+			swap_back_to_front(lst);
+			n--;
+		}
+	}
 }

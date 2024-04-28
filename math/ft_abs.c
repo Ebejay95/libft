@@ -6,13 +6,13 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:22:49 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/17 15:26:10 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/25 00:25:22 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-int ft_abs(int n)
+int	ft_abs(int n)
 {
 	if (n == INT_MIN)
 		return (INT_MAX);

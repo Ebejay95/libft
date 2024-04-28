@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlistsize.c                                     :+:      :+:    :+:   */
+/*   ft_dlstsize.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:44:54 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/16 21:12:55 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/04/25 00:37:56 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-int		ft_dlstsize(t_dlist *dlst)
+int	ft_dlstsize(t_dlist *dlst)
 {
 	int	len;
 

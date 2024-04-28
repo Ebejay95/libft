@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/19 08:42:21 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/27 19:31:03 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ ANALYZER_SRCS= \
 ./analyzer/ft_isascii.c \
 ./analyzer/ft_isdigit.c \
 ./analyzer/ft_isprint.c \
+./analyzer/ft_isspace.c \
 ./analyzer/ft_str_is_unique.c \
 ./analyzer/ft_strchr.c \
 ./analyzer/ft_strcmp.c \
@@ -61,6 +62,7 @@ LISTS_SRCS= \
 ./lists/ft_lstlast.c \
 ./lists/ft_lstmap.c \
 ./lists/ft_lstnew.c \
+./lists/ft_lstpenultimate.c \
 ./lists/ft_lstput.c \
 ./lists/ft_lstrotate.c \
 ./lists/ft_lstsize.c
@@ -110,8 +112,9 @@ PRINTS_SRCS= \
 ./prints/smart_prints_2.c
 
 STRINGS_SRCS= \
-./strings/ft_strcpy.c \
+./strings/ft_count_words.c \
 ./strings/ft_split.c \
+./strings/ft_strcpy.c \
 ./strings/ft_strdup.c \
 ./strings/ft_striteri.c \
 ./strings/ft_strjoin.c \

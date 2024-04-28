@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putbits.c                                       :+:      :+:    :+:   */
+/*   ft_lstpenultimate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 08:46:27 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/25 00:23:36 by jeberle          ###   ########.fr       */
+/*   Created: 2024/04/25 01:05:07 by jeberle           #+#    #+#             */
+/*   Updated: 2024/04/25 01:39:08 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-void	ft_putbits(int n)
+t_list	*ft_lstpenultimate(t_list *lst)
 {
-	int	i;
-
-	i = 7;
-	while (i >= 0)
-	{
-		if (n & (1 << i))
-			write(1, "1", 1);
-		else
-			write(1, "0", 1);
-		i--;
-	}
+	if (lst == NULL || lst->next == NULL)
+		return (NULL);
+	while (lst->next->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
