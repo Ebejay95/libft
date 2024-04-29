@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
+#    By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/27 19:31:03 by jeberle          ###   ########.fr        #
+#    Updated: 2024/04/29 23:03:43 by jonathanebe      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ LISTS_SRCS= \
 ./lists/ft_dlstadd_back.c \
 ./lists/ft_dlstadd_front.c \
 ./lists/ft_dlstclear.c \
+./lists/ft_dlstfind.c \
 ./lists/ft_dlstdelone.c \
 ./lists/ft_dlstlast.c \
 ./lists/ft_dlstnew.c \
