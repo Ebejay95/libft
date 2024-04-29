@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 22:25:15 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/29 22:35:29 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ static int	safe_atoi_handler(long long *i, int *e, const char *s, int *ms)
 		s++;
 	}
 	*i = *i * *ms;
+	if(!ft_isspace(*s) || *s == '\0')
+		return (smart_return((int)*i, e));
 	return ((int)*i);
 }
 
