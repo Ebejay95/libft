@@ -6,7 +6,7 @@
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/29 22:35:29 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/04/29 22:41:21 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,13 @@ static int	safe_atoi_handler(long long *i, int *e, const char *s, int *ms)
 		*i = *i * 10 + (*s - '0');
 		s++;
 	}
+	while (*s != '\0')
+	{
+		if (!ft_isspace(*s))
+			return (smart_return(0, e));
+		s++;
+	}
 	*i = *i * *ms;
-	if(!ft_isspace(*s) || *s == '\0')
-		return (smart_return((int)*i, e));
 	return ((int)*i);
 }
 
