@@ -6,7 +6,7 @@
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:28:17 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/02 10:09:13 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/02 10:16:35 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 /// @return line	the line as a terminated string
 char	*get_next_line(int fd)
 {
-	static char	*workstring[OPEN_MAX];
+	static char	*workstring[1024];
 	char		*line;
 	int			status;
 	char		range[BUFFER_SIZE + 1];
