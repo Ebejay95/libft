@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/27 19:30:51 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/04/29 23:05:54 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ char	*ft_strbase(unsigned long long input, const char *base);
 void	ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 void	ft_dlstclear(t_dlist **lst, void (*del)(void *));
+void	*ft_dlstfind(t_dlist **lst, void *content, int (*cmp)(void *, void *));
 void	ft_dlstdelone(t_dlist *lst, void (*del)(void *));
 t_dlist	*ft_dlstlast(t_dlist *lst);
 t_dlist	*ft_dlstnew(void *content);

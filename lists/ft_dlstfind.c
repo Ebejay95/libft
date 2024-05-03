@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_kgv.c                                           :+:      :+:    :+:   */
+/*   ft_dlstfind.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 08:54:06 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/28 16:12:00 by jonathanebe      ###   ########.fr       */
+/*   Created: 2024/04/29 22:58:42 by jonathanebe       #+#    #+#             */
+/*   Updated: 2024/05/02 17:18:05 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-//int	ft_kgv(int a, int b)
-//{
-//	int n;
-//
-//	n = 0;
-//	if ((a == 0) || (b == 0))
-//		return (0);
-//	if(a >= b)
-//		n = a;
-//	if(b >= a)
-//		n = b;
-//	while (1)
-//	{
-//		if((n % a == 0) && (n % b == 0))
-//			return (n);
-//		n++;
-//	}
-//}
-
-int	ft_kgv(int a, int b)
+void	*ft_dlstfind(t_dlist **lst, void *content, int (*cmp)(void *, void *))
 {
-	if ((a == 0) || (b == 0))
-		return (0);
-	return ((a / ft_ggt(a, b)) * b);
+	while (*lst != NULL)
+	{
+		if (cmp(content, (*lst)->content) == 0)
+			return (lst);
+		lst = &((*lst)->next);
+	}
+	return (NULL);
 }
