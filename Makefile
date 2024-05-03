@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/27 19:31:03 by jeberle          ###   ########.fr        #
+#    Updated: 2024/05/03 10:13:41 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,7 +106,6 @@ PRINTS_SRCS= \
 ./prints/ft_putstrr.c \
 ./prints/ft_putunbr.c \
 ./prints/ft_putunbrr.c \
-./prints/get_next_line_utils.c \
 ./prints/get_next_line.c \
 ./prints/smart_prints_1.c \
 ./prints/smart_prints_2.c
