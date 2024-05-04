@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/29 23:05:54 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/04 12:35:03 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,7 +236,6 @@ char	*get_next_line(int fd);
 char	*build_line(char *workstring);
 char	*build_workstring(int fd, char *workstring, int *state, char *range);
 char	*prep_next(char *workstring);
-void	*ft_memset(void *start, int fill, size_t size);
 
 // FILE_HANDLING
 //int ft_open(const char *filename, int mode);
