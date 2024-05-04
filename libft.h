@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/04 12:43:40 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/04 16:53:16 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
+
+#define RED "\x1b[31m"
+#define GREEN "\x1b[32m"
+#define YELLOW "\x1b[33m"
+#define BLUE "\x1b[34m"
+#define MAGENTA "\x1b[35m"
+#define CYAN "\x1b[36m"
+#define COLOR_RESET "\x1b[0m"
 
 typedef struct s_list
 {
@@ -187,6 +195,7 @@ int		ft_unsetenv(const char *name);
 // PRINTS
 // all for error fd unified naming and suppert for fd's return 
 //etc TDO ERROR (perror)
+char	*ft_color(char *str, char *color);
 int		ft_printf(const char *text, ...);
 void	ft_putbits(int n);
 void	ft_putchar_fd(char c, int fd);
