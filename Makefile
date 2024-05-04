@@ -6,140 +6,197 @@
 #    By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/04 20:33:54 by jonathanebe      ###   ########.fr        #
+#    Updated: 2024/05/04 22:26:41 by jonathanebe      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#------------------------------------------------------------------------------#
+#--------------                       PRINT                       -------------#
+#------------------------------------------------------------------------------#
+
+RED := \033[31m
+GREEN := \033[32m
+YELLOW := \033[33m
+BLUE := \033[34m
+MAGENTA := \033[35m
+CYAN := \033[36m
+X := \033[0m
+
+SUCCESS := \n$(CYAN)\
+█████████████████████████████████████$(X)\n\
+$(X)\n\
+█        █  ███████  ███████  ███████$(X)\n\
+█        █  █     █  █           █   $(X)\n\
+█        █  ██████   ███████     █   $(X)\n\
+█        █  █     █  █           █   $(X)\n\
+███████  █  ███████  █           █   $(X)\n\
+$(X)\n\
+$(CYAN)█████████████████████████████████████$(X)\n\
+
+
+#------------------------------------------------------------------------------#
+#--------------                      GENERAL                      -------------#
+#------------------------------------------------------------------------------#
+
 NAME=libft.a
 
-CODEDIRS=.
+#------------------------------------------------------------------------------#
+#--------------                       FLAGS                       -------------#
+#------------------------------------------------------------------------------#
+
 CC=cc
-CFLAGS= -Wall -Wextra -Werror
-DEPFLAGS= -MP -MD
+CFLAGS=-Wall -Wextra -Werror
+ifeq ($(DEBUG), 1)
+	CFLAGS += -fsanitize=address -g
+endif
+DEPFLAGS=-MMD -MP
+
+#------------------------------------------------------------------------------#
+#--------------                        DIR                        -------------#
+#------------------------------------------------------------------------------#
+
+OBJ_DIR := ./obj
+DEP_DIR := $(OBJ_DIR)/.deps
+INC_DIRS := .
+SRC_DIRS := analyzer converter lists math memory prints strings
+
+vpath %.c $(foreach dir,$(SRC_DIRS),$(dir))
+vpath %.h $(INC_DIRS)
+vpath %.d $(DEP_DIR)
+
+#------------------------------------------------------------------------------#
+#--------------                        SRC                        -------------#
+#------------------------------------------------------------------------------#
 
 ANALYZER_SRCS= \
-./analyzer/ft_isalnum.c \
-./analyzer/ft_isalpha.c \
-./analyzer/ft_isascii.c \
-./analyzer/ft_isdigit.c \
-./analyzer/ft_isprint.c \
-./analyzer/ft_isspace.c \
-./analyzer/ft_str_is_unique.c \
-./analyzer/ft_strchr.c \
-./analyzer/ft_strcmp.c \
-./analyzer/ft_strcontains.c \
-./analyzer/ft_strlen.c \
-./analyzer/ft_strncmp.c \
-./analyzer/ft_strnstr.c \
-./analyzer/ft_strpbrk.c \
-./analyzer/ft_strrchr.c \
-./analyzer/ft_strspn.c \
-./analyzer/ft_strstr.c \
-./analyzer/ft_substr.c
+ft_isalnum.c \
+ft_isalpha.c \
+ft_isascii.c \
+ft_isdigit.c \
+ft_isprint.c \
+ft_isspace.c \
+ft_str_is_unique.c \
+ft_strchr.c \
+ft_strcmp.c \
+ft_strcontains.c \
+ft_strlen.c \
+ft_strncmp.c \
+ft_strnstr.c \
+ft_strpbrk.c \
+ft_strrchr.c \
+ft_strspn.c \
+ft_strstr.c \
+ft_substr.c
 
 CONVERTER_SRCS= \
-./converter/ft_atoi.c \
-./converter/ft_itoa.c \
-./converter/ft_strbase.c
+ft_atoi.c \
+ft_itoa.c \
+ft_strbase.c
 
 LISTS_SRCS= \
-./lists/ft_dlstadd_back.c \
-./lists/ft_dlstadd_front.c \
-./lists/ft_dlstclear.c \
-./lists/ft_dlstdelone.c \
-./lists/ft_dlstfind.c \
-./lists/ft_dlstlast.c \
-./lists/ft_dlstnew.c \
-./lists/ft_dlstput.c \
-./lists/ft_dlstrotate.c \
-./lists/ft_dlstsize.c \
-./lists/ft_lstadd_back.c \
-./lists/ft_lstadd_front.c \
-./lists/ft_lstclear.c \
-./lists/ft_lstdelone.c \
-./lists/ft_lstfind.c \
-./lists/ft_lstinsert_after.c \
-./lists/ft_lstiter.c \
-./lists/ft_lstlast.c \
-./lists/ft_lstmap.c \
-./lists/ft_lstnew.c \
-./lists/ft_lstpenultimate.c \
-./lists/ft_lstput.c \
-./lists/ft_lstrotate.c \
-./lists/ft_lstsize.c
+ft_dlstadd_back.c \
+ft_dlstadd_front.c \
+ft_dlstclear.c \
+ft_dlstdelone.c \
+ft_dlstfind.c \
+ft_dlstlast.c \
+ft_dlstnew.c \
+ft_dlstput.c \
+ft_dlstrotate.c \
+ft_dlstsize.c \
+ft_lstadd_back.c \
+ft_lstadd_front.c \
+ft_lstclear.c \
+ft_lstdelone.c \
+ft_lstfind.c \
+ft_lstinsert_after.c \
+ft_lstiter.c \
+ft_lstlast.c \
+ft_lstmap.c \
+ft_lstnew.c \
+ft_lstpenultimate.c \
+ft_lstput.c \
+ft_lstrotate.c \
+ft_lstsize.c
 
 MATH_SRCS= \
-./math/ft_abs.c \
-./math/ft_even.c \
-./math/ft_ggt.c \
-./math/ft_isneg.c \
-./math/ft_ispos.c \
-./math/ft_kgv.c \
-./math/ft_odd.c \
+ft_abs.c \
+ft_even.c \
+ft_ggt.c \
+ft_isneg.c \
+ft_ispos.c \
+ft_kgv.c \
+ft_odd.c \
 
 MEMORY_SRCS= \
-./memory/ft_bzero.c \
-./memory/ft_calloc.c \
-./memory/ft_getenv.c \
-./memory/ft_memchr.c \
-./memory/ft_memcmp.c \
-./memory/ft_memcpy.c \
-./memory/ft_memmove.c \
-./memory/ft_memset.c \
-./memory/ft_realloc.c \
-./memory/ft_smartfree.c \
+ft_bzero.c \
+ft_calloc.c \
+ft_getenv.c \
+ft_memchr.c \
+ft_memcmp.c \
+ft_memcpy.c \
+ft_memmove.c \
+ft_memset.c \
+ft_realloc.c \
+ft_smartfree.c \
 
 PRINTS_SRCS= \
-./prints/ft_color.c \
-./prints/ft_fprintf.c \
-./prints/ft_printf.c \
-./prints/ft_putbits_fd.c \
-./prints/ft_putbits.c \
-./prints/ft_putchar_fd.c \
-./prints/ft_putchar.c \
-./prints/ft_putcharr_fd.c \
-./prints/ft_putcharr.c \
-./prints/ft_putendl_fd.c \
-./prints/ft_putendl.c \
-./prints/ft_putenv_fd.c \
-./prints/ft_putenv.c \
-./prints/ft_putnbr_fd.c \
-./prints/ft_putnbr.c \
-./prints/ft_putnbrr_fd.c \
-./prints/ft_putnbrr.c \
-./prints/ft_putstr_fd.c \
-./prints/ft_putstr.c \
-./prints/ft_putstrr_fd.c \
-./prints/ft_putstrr.c \
-./prints/ft_putunbr_fd.c \
-./prints/ft_putunbr.c \
-./prints/ft_putunbrr_fd.c \
-./prints/ft_putunbrr.c \
-./prints/get_next_line.c \
-./prints/smart_prints_1.c \
-./prints/smart_prints_2.c
+ft_color.c \
+ft_fprintf.c \
+ft_printf.c \
+ft_putbits_fd.c \
+ft_putbits.c \
+ft_putchar_fd.c \
+ft_putchar.c \
+ft_putcharr_fd.c \
+ft_putcharr.c \
+ft_putendl_fd.c \
+ft_putendl.c \
+ft_putenv_fd.c \
+ft_putenv.c \
+ft_putnbr_fd.c \
+ft_putnbr.c \
+ft_putnbrr_fd.c \
+ft_putnbrr.c \
+ft_putstr_fd.c \
+ft_putstr.c \
+ft_putstrr_fd.c \
+ft_putstrr.c \
+ft_putunbr_fd.c \
+ft_putunbr.c \
+ft_putunbrr_fd.c \
+ft_putunbrr.c \
+get_next_line.c \
+smart_prints_1.c \
+smart_prints_2.c
 
 STRINGS_SRCS= \
-./strings/ft_count_words.c \
-./strings/ft_split.c \
-./strings/ft_strcat.c \
-./strings/ft_strcpy.c \
-./strings/ft_strdup.c \
-./strings/ft_striteri.c \
-./strings/ft_strjoin.c \
-./strings/ft_strlcat.c \
-./strings/ft_strlcpy.c \
-./strings/ft_strmapi.c \
-./strings/ft_strreplace.c \
-./strings/ft_strreplaceall.c \
-./strings/ft_strrev.c \
-./strings/ft_strtrim.c \
-./strings/ft_tolower.c \
-./strings/ft_toupper.c
+ft_count_words.c \
+ft_split.c \
+ft_strcat.c \
+ft_strcpy.c \
+ft_strdup.c \
+ft_striteri.c \
+ft_strjoin.c \
+ft_strlcat.c \
+ft_strlcpy.c \
+ft_strmapi.c \
+ft_strreplace.c \
+ft_strreplaceall.c \
+ft_strrev.c \
+ft_strtrim.c \
+ft_tolower.c \
+ft_toupper.c
 
-CFILES= $(ANALYZER_SRCS) $(CONVERTER_SRCS) $(LISTS_SRCS) $(MATH_SRCS) $(MEMORY_SRCS) $(PRINTS_SRCS) $(STRINGS_SRCS)
-OBJECTS=$(CFILES:.c=.o)
-DEPFILES=libft.h
+#------------------------------------------------------------------------------#
+#--------------                      OBJECTS                      -------------#
+#------------------------------------------------------------------------------#
+
+OBJECTS := $(addprefix $(OBJ_DIR)/, $(ANALYZER_SRCS:%.c=%.o) $(CONVERTER_SRCS:%.c=%.o) $(LISTS_SRCS:%.c=%.o) $(MATH_SRCS:%.c=%.o) $(MEMORY_SRCS:%.c=%.o) $(PRINTS_SRCS:%.c=%.o) $(STRINGS_SRCS:%.c=%.o))
+
+#------------------------------------------------------------------------------#
+#--------------                      COMPILE                      -------------#
+#------------------------------------------------------------------------------#
 
 .PHONY:	all clean fclean re bonus
 
@@ -147,10 +204,11 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	@ar rs $(NAME) $(OBJECTS) > /dev/null 2>&1
-	@echo "\033[32mSUCCESS: libft\033[0m"
+	@echo "$(GREEN)SUCCESS:$(X)\n$(SUCCESS)"
 
-%.o:%.c
-	@$(CC) $(CFLAGS) $(DEPFLAGS) -c -o $@ $<
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) $(DEPFLAGS) -I$(INC_DIRS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJECTS) $(OBJECTS:.o=.d)
