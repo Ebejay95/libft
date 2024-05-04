@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/05/04 10:17:32 by jonathanebe      ###   ########.fr       */
+=======
+/*   Updated: 2024/05/04 16:54:59 by jeberle          ###   ########.fr       */
+>>>>>>> 1f887d3a9f225eaa0897e53491333aca3e3227a3
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +25,21 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
+
+#define RED "\x1b[31m"
+#define GREEN "\x1b[32m"
+#define YELLOW "\x1b[33m"
+#define BLUE "\x1b[34m"
+#define MAGENTA "\x1b[35m"
+#define CYAN "\x1b[36m"
+#define BRIGHT_RED     "\x1b[91m"
+#define BRIGHT_GREEN   "\x1b[92m"
+#define BRIGHT_YELLOW  "\x1b[93m"
+#define BRIGHT_BLUE    "\x1b[94m"
+#define BRIGHT_MAGENTA "\x1b[95m"
+#define BRIGHT_CYAN    "\x1b[96m"
+#define BRIGHT_WHITE   "\x1b[97m"
+#define COLOR_RESET "\x1b[0m"
 
 typedef struct s_list
 {
@@ -188,6 +207,7 @@ int		ft_unsetenv(const char *name);
 // all for error fd unified naming and suppert for fd's return 
 //etc TDO ERROR (perror)
 int		ft_fprintf(int fd, const char *text, ...);
+char	*ft_color(char *str, char *color);
 int		ft_printf(const char *text, ...);
 void	ft_putbits_fd(int fd, int n);
 void	ft_putbits(int n);
@@ -244,7 +264,6 @@ char	*get_next_line(int fd);
 char	*build_line(char *workstring);
 char	*build_workstring(int fd, char *workstring, int *state, char *range);
 char	*prep_next(char *workstring);
-void	*ft_memset(void *start, int fill, size_t size);
 
 // FILE_HANDLING
 //int ft_open(const char *filename, int mode);

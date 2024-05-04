@@ -6,7 +6,7 @@
 #    By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/04 10:15:22 by jonathanebe      ###   ########.fr        #
+#    Updated: 2024/05/04 20:33:54 by jonathanebe      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,8 @@ LISTS_SRCS= \
 ./lists/ft_dlstadd_back.c \
 ./lists/ft_dlstadd_front.c \
 ./lists/ft_dlstclear.c \
-./lists/ft_dlstfind.c \
 ./lists/ft_dlstdelone.c \
+./lists/ft_dlstfind.c \
 ./lists/ft_dlstlast.c \
 ./lists/ft_dlstnew.c \
 ./lists/ft_dlstput.c \
@@ -90,6 +90,7 @@ MEMORY_SRCS= \
 ./memory/ft_smartfree.c \
 
 PRINTS_SRCS= \
+./prints/ft_color.c \
 ./prints/ft_fprintf.c \
 ./prints/ft_printf.c \
 ./prints/ft_putbits_fd.c \
@@ -114,7 +115,6 @@ PRINTS_SRCS= \
 ./prints/ft_putunbr.c \
 ./prints/ft_putunbrr_fd.c \
 ./prints/ft_putunbrr.c \
-./prints/get_next_line_utils.c \
 ./prints/get_next_line.c \
 ./prints/smart_prints_1.c \
 ./prints/smart_prints_2.c
