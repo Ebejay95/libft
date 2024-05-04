@@ -6,7 +6,7 @@
 #    By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/04/29 23:03:43 by jonathanebe      ###   ########.fr        #
+#    Updated: 2024/05/04 10:15:22 by jonathanebe      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,9 @@ MEMORY_SRCS= \
 ./memory/ft_smartfree.c \
 
 PRINTS_SRCS= \
+./prints/ft_fprintf.c \
 ./prints/ft_printf.c \
+./prints/ft_putbits_fd.c \
 ./prints/ft_putbits.c \
 ./prints/ft_putchar_fd.c \
 ./prints/ft_putchar.c \
@@ -98,14 +100,19 @@ PRINTS_SRCS= \
 ./prints/ft_putcharr.c \
 ./prints/ft_putendl_fd.c \
 ./prints/ft_putendl.c \
+./prints/ft_putenv_fd.c \
 ./prints/ft_putenv.c \
 ./prints/ft_putnbr_fd.c \
 ./prints/ft_putnbr.c \
+./prints/ft_putnbrr_fd.c \
 ./prints/ft_putnbrr.c \
 ./prints/ft_putstr_fd.c \
 ./prints/ft_putstr.c \
+./prints/ft_putstrr_fd.c \
 ./prints/ft_putstrr.c \
+./prints/ft_putunbr_fd.c \
 ./prints/ft_putunbr.c \
+./prints/ft_putunbrr_fd.c \
 ./prints/ft_putunbrr.c \
 ./prints/get_next_line_utils.c \
 ./prints/get_next_line.c \
@@ -115,6 +122,7 @@ PRINTS_SRCS= \
 STRINGS_SRCS= \
 ./strings/ft_count_words.c \
 ./strings/ft_split.c \
+./strings/ft_strcat.c \
 ./strings/ft_strcpy.c \
 ./strings/ft_strdup.c \
 ./strings/ft_striteri.c \

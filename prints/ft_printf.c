@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:32:58 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 01:40:10 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/04 10:11:13 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	formatted_print(const char *text, va_list args)
 
 	if (filter_not_defined_arg_types(*text))
 	{
-		prr = smart_print(*text, args);
+		prr = smart_print(1, *text, args);
 		if (prr < 0)
 			return (-1);
 		return (prr);

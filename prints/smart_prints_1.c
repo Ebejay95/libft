@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   smart_prints_1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:27:32 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/04/05 01:42:03 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/04 10:11:30 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 /// @brief 		write a char to output and return write state
 /// @param c 	the char to be written
 /// @return 	the write state
-int	smart_print_c(int c)
+int	smart_print_c(int fd, int c)
 {
-	if (ft_putcharr(c) < 0)
+	if (ft_putcharr_fd(fd, c) < 0)
 		return (-1);
 	return (1);
 }
@@ -26,15 +26,15 @@ int	smart_print_c(int c)
 ///				and check fur NULL pointer - treat it as (null)
 /// @param s 	the string to be written
 /// @return 	the write state
-int	smart_print_s(char *s)
+int	smart_print_s(int fd, char *s)
 {
 	if (s == NULL)
 	{
-		if (ft_putstrr("(null)") < 0)
+		if (ft_putstrr_fd(fd, "(null)") < 0)
 			return (-1);
 		return (6);
 	}
-	if (ft_putstrr(s) < 0)
+	if (ft_putstrr_fd(fd, s) < 0)
 		return (-1);
 	return (ft_strlen(s));
 }
@@ -44,7 +44,7 @@ int	smart_print_s(char *s)
 ///				lowercase hexa
 /// @param p 	the pointer to be written
 /// @return 	the write state
-int	smart_print_p(void *p)
+int	smart_print_p(int fd, void *p)
 {
 	unsigned long long int	ptr;
 	char					*s;
@@ -52,16 +52,16 @@ int	smart_print_p(void *p)
 
 	ptr = (unsigned long long int)p;
 	if (p == NULL)
-		return (null_pointer());
+		return (null_pointer(fd));
 	s = ft_strbase(ptr, "0123456789abcdef");
 	if (s == NULL)
 		return (-1);
-	if (ft_putstrr("0x") < 0)
+	if (ft_putstrr_fd(fd, "0x") < 0)
 	{
 		free(s);
 		return (-1);
 	}
-	if (ft_putstrr(s) < 0)
+	if (ft_putstrr_fd(fd, s) < 0)
 	{
 		free(s);
 		return (-1);
@@ -74,15 +74,15 @@ int	smart_print_p(void *p)
 /// @brief 		write a decimal to output and return write state
 /// @param i 	the decimal to be written
 /// @return 	the write state
-int	smart_print_d(int i)
+int	smart_print_d(int fd, int i)
 {
-	return (ft_putnbrr(i));
+	return (ft_putnbrr_fd(fd, i));
 }
 
 /// @brief 		write a int to output and return write state
 /// @param i 	the int to be written
 /// @return 	the write state
-int	smart_print_i(int i)
+int	smart_print_i(int fd, int i)
 {
 	char	*s;
 	int		rl;
@@ -90,7 +90,7 @@ int	smart_print_i(int i)
 	s = ft_itoa(i);
 	if (s == NULL)
 		return (-1);
-	if (ft_putstrr(s) < 0)
+	if (ft_putstrr_fd(fd, s) < 0)
 	{
 		free(s);
 		return (-1);

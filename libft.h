@@ -6,7 +6,7 @@
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/29 23:05:54 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/04 10:17:32 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,16 @@ typedef struct s_dlist
 char	*build_line(char *workstring);
 char	*build_workstring(int fd, char *workstring, int *state, char *range);
 char	*prep_next(char *workstring);
-int		smart_print_c(int c);
-int		smart_print_s(char *s);
-int		smart_print_p(void *p);
-int		smart_print_d(int i);
-int		smart_print_i(int i);
-int		smart_print_u(unsigned int i);
-int		smart_print_x(unsigned int i);
-int		smart_print_xup(unsigned int i);
-int		smart_print(char type, va_list args);
-int		null_pointer(void);
+int		smart_print_c(int fd, int c);
+int		smart_print_s(int fd, char *s);
+int		smart_print_p(int fd, void *p);
+int		smart_print_d(int fd, int i);
+int		smart_print_i(int fd, int i);
+int		smart_print_u(int fd, unsigned int i);
+int		smart_print_x(int fd, unsigned int i);
+int		smart_print_xup(int fd, unsigned int i);
+int		smart_print(int fd, char type, va_list args);
+int		null_pointer(int fd);
 
 // ANALYZER
 //	int ft_isspace(int c);
@@ -187,7 +187,9 @@ int		ft_unsetenv(const char *name);
 // PRINTS
 // all for error fd unified naming and suppert for fd's return 
 //etc TDO ERROR (perror)
+int		ft_fprintf(int fd, const char *text, ...);
 int		ft_printf(const char *text, ...);
+void	ft_putbits_fd(int fd, int n);
 void	ft_putbits(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putchar(char c);
@@ -195,14 +197,19 @@ int		ft_putcharr_fd(char c, int fd);
 int		ft_putcharr(char c);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putendl(char *s);
+int		ft_putenv_fd(int fd, char *string);
 int		ft_putenv(char *string);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
+int		ft_putnbrr_fd(int fd, int n);
 int		ft_putnbrr(int n);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putstr(char *s);
+int		ft_putstrr_fd(int fd, char *s);
 int		ft_putstrr(char *s);
+void	ft_putunbr_fd(int fd, unsigned int n);
 void	ft_putunbr(unsigned int n);
+int		ft_putunbrr_fd(int fd, unsigned int n);
 int		ft_putunbrr(unsigned int n);
 char	*get_next_line(int fd);
 
@@ -216,6 +223,7 @@ char	*get_next_line(int fd);
 //char *ft_strndup(const char *s1, size_t n);
 size_t	ft_count_words(char const *s, char c);
 size_t	ft_strcpy(char *trg, const char *src);
+size_t	ft_strcat(char *trg, const char *src);
 size_t	ft_strlcat(char *trg, const char *src, size_t size);
 size_t	ft_strlcpy(char *trg, const char *src, size_t size);
 int		ft_tolower(int c);
