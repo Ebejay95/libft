@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/04 16:53:16 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/04 16:54:59 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@
 #define BLUE "\x1b[34m"
 #define MAGENTA "\x1b[35m"
 #define CYAN "\x1b[36m"
+#define BRIGHT_RED     "\x1b[91m"
+#define BRIGHT_GREEN   "\x1b[92m"
+#define BRIGHT_YELLOW  "\x1b[93m"
+#define BRIGHT_BLUE    "\x1b[94m"
+#define BRIGHT_MAGENTA "\x1b[95m"
+#define BRIGHT_CYAN    "\x1b[96m"
+#define BRIGHT_WHITE   "\x1b[97m"
 #define COLOR_RESET "\x1b[0m"
 
 typedef struct s_list
