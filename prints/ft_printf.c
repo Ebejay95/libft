@@ -6,7 +6,7 @@
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:32:58 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/04 10:11:13 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/05 21:33:12 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ int	ft_printf(const char *text, ...)
 
 	idx = 0;
 	pr_len = 0;
+	if(text == NULL)
+		return (0);
 	va_start(args, text);
 	while (text[idx] != '\0')
 	{
