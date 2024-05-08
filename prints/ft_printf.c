@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:32:58 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/05 21:33:12 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/08 08:08:30 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	ft_printf(const char *text, ...)
 
 	idx = 0;
 	pr_len = 0;
-	if(text == NULL)
+	if (text == NULL)
 		return (0);
 	va_start(args, text);
 	while (text[idx] != '\0')

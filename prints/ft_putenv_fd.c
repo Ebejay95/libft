@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putenv_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 10:18:30 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/04 10:20:19 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/08 08:07:11 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
