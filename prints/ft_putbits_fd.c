@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putbits_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 10:15:55 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/04 10:16:21 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/08 08:07:17 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ void	ft_putbits_fd(int fd, int n)
 		i--;
 	}
 }
-
