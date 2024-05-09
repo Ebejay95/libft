@@ -6,7 +6,7 @@
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/04 21:40:34 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/09 13:25:18 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,10 @@ char	*ft_strrchr(const char *src, int c);
 size_t	ft_strspn(const char *s, const char *charset);
 char	*ft_strstr(const char *hayst, const char *needle);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+// ARRAYS
+void	ft_array_free(char **array);
+int		ft_array_length(char **array);
 
 // CONVERTER
 //double ft_atof(const char *str);
@@ -205,6 +209,7 @@ int		ft_unsetenv(const char *name);
 int		ft_fprintf(int fd, const char *text, ...);
 char	*ft_color(char *str, char *color);
 int		ft_printf(const char *text, ...);
+void	ft_putarray(char **array);
 void	ft_putbits_fd(int fd, int n);
 void	ft_putbits(int n);
 void	ft_putchar_fd(char c, int fd);

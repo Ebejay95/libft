@@ -6,7 +6,7 @@
 #    By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/04 22:26:41 by jonathanebe      ###   ########.fr        #
+#    Updated: 2024/05/09 13:23:35 by jonathanebe      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ DEPFLAGS=-MMD -MP
 OBJ_DIR := ./obj
 DEP_DIR := $(OBJ_DIR)/.deps
 INC_DIRS := .
-SRC_DIRS := analyzer converter lists math memory prints strings
+SRC_DIRS := analyzer arrays converter lists math memory prints strings
 
 vpath %.c $(foreach dir,$(SRC_DIRS),$(dir))
 vpath %.h $(INC_DIRS)
@@ -87,6 +87,10 @@ ft_strrchr.c \
 ft_strspn.c \
 ft_strstr.c \
 ft_substr.c
+
+ARRAYS_SRCS= \
+ft_array_free.c \
+ft_array_length.c
 
 CONVERTER_SRCS= \
 ft_atoi.c \
@@ -144,6 +148,7 @@ PRINTS_SRCS= \
 ft_color.c \
 ft_fprintf.c \
 ft_printf.c \
+ft_putarray.c \
 ft_putbits_fd.c \
 ft_putbits.c \
 ft_putchar_fd.c \
@@ -192,7 +197,7 @@ ft_toupper.c
 #--------------                      OBJECTS                      -------------#
 #------------------------------------------------------------------------------#
 
-OBJECTS := $(addprefix $(OBJ_DIR)/, $(ANALYZER_SRCS:%.c=%.o) $(CONVERTER_SRCS:%.c=%.o) $(LISTS_SRCS:%.c=%.o) $(MATH_SRCS:%.c=%.o) $(MEMORY_SRCS:%.c=%.o) $(PRINTS_SRCS:%.c=%.o) $(STRINGS_SRCS:%.c=%.o))
+OBJECTS := $(addprefix $(OBJ_DIR)/, $(ANALYZER_SRCS:%.c=%.o) $(ARRAYS_SRCS:%.c=%.o) $(CONVERTER_SRCS:%.c=%.o) $(LISTS_SRCS:%.c=%.o) $(MATH_SRCS:%.c=%.o) $(MEMORY_SRCS:%.c=%.o) $(PRINTS_SRCS:%.c=%.o) $(STRINGS_SRCS:%.c=%.o))
 
 #------------------------------------------------------------------------------#
 #--------------                      COMPILE                      -------------#
