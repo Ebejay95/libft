@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/09 13:31:03 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/15 10:39:35 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,19 +212,19 @@ int		ft_printf(const char *text, ...);
 void	ft_putarray(char **array);
 void	ft_putbits_fd(int fd, int n);
 void	ft_putbits(int n);
-void	ft_putchar_fd(char c, int fd);
+void	ft_putchar_fd(int fd, char c);
 void	ft_putchar(char c);
-int		ft_putcharr_fd(char c, int fd);
+int		ft_putcharr_fd(int fd, char c);
 int		ft_putcharr(char c);
-void	ft_putendl_fd(char *s, int fd);
+void	ft_putendl_fd(int fd, char *s);
 void	ft_putendl(char *s);
 int		ft_putenv_fd(int fd, char *string);
 int		ft_putenv(char *string);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int fd, int n);
 void	ft_putnbr(int n);
 int		ft_putnbrr_fd(int fd, int n);
 int		ft_putnbrr(int n);
-void	ft_putstr_fd(char *s, int fd);
+void	ft_putstr_fd(int fd, char *s);
 void	ft_putstr(char *s);
 int		ft_putstrr_fd(int fd, char *s);
 int		ft_putstrr(char *s);

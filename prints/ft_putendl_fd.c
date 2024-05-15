@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 21:20:21 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 00:55:29 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/15 10:40:28 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 ///				1	stdout	to console
 ///				2	stderr	to error log
 ///				2<	to file in writing status
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(int fd, char *s)
 {
 	while (*s != '\0')
 	{

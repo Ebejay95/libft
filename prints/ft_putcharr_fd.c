@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 21:16:54 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 09:15:11 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/15 10:40:21 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ///				1	stdout	to console
 ///				2	stderr	to error log
 ///				2<	to file in writing status
-int	ft_putcharr_fd(char c, int fd)
+int	ft_putcharr_fd(int fd, char c)
 {
 	return (write(fd, &c, 1));
 }
