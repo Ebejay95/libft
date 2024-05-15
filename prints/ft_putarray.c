@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 13:09:52 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/15 10:03:32 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/15 14:03:57 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	ft_putarray(char **array)
 	length = ft_array_length(array);
 	i = 0;
 	ft_printf("[\n");
-	while (i < length && array[i] != NULL)
+	while (i < length)
 	{
 		if (i == (length - 1))
-			ft_printf("\t%i : \"%s\"\n", i, array[i]);
+			ft_printf("  %i : \"%s\"\n", i, array[i]);
 		else
-			ft_printf("\t%i : \"%s\",\n", i, array[i]);
+			ft_printf("  %i : \"%s\",\n", i, array[i]);
 		i--;
 	}
 	ft_printf("]\n");
