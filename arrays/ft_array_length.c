@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_array_length.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 13:17:11 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/09 13:17:46 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/15 10:03:11 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
