@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_free.c                                    :+:      :+:    :+:   */
+/*   ft_array_l_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 13:17:59 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/15 11:07:17 by jeberle          ###   ########.fr       */
+/*   Created: 2024/05/15 11:05:05 by jeberle           #+#    #+#             */
+/*   Updated: 2024/05/15 11:13:04 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-void	ft_array_free(char **array)
+void	ft_array_l_free(char **array, size_t len)
 {
-	int	length;
+	size_t	i;
 
+	i = 0;
 	if (array == NULL)
 		return ;
-	length = ft_array_length(array);
-	length--;
-	while (length >= 0)
+	while (i < len)
 	{
-		free(array[length]);
-		length--;
+		free(array[i]);
+		i++;
 	}
 	free(array);
 }

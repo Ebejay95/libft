@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/15 10:39:35 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/15 11:08:09 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 // ARRAYS
 void	ft_array_free(char **array);
+void	ft_array_l_free(char **array, size_t len);
 int		ft_array_length(char **array);
 
 // CONVERTER

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+         #
+#    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/09 13:23:35 by jonathanebe      ###   ########.fr        #
+#    Updated: 2024/05/15 11:08:23 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,6 +90,7 @@ ft_substr.c
 
 ARRAYS_SRCS= \
 ft_array_free.c \
+ft_array_l_free.c \
 ft_array_length.c
 
 CONVERTER_SRCS= \
