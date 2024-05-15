@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/15 11:08:09 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/15 14:53:59 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_isspace(char c);
+size_t	ft_strcchr(const char *s, int c);
 int		ft_str_is_unique(char *str);
 char	*ft_strchr(const char *src, int c);
 int		ft_strcmp(const char *s1, const char *s2);

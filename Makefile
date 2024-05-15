@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/15 11:08:23 by jeberle          ###   ########.fr        #
+#    Updated: 2024/05/15 14:53:51 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,6 +76,7 @@ ft_isdigit.c \
 ft_isprint.c \
 ft_isspace.c \
 ft_str_is_unique.c \
+ft_strcchr.c \
 ft_strchr.c \
 ft_strcmp.c \
 ft_strcontains.c \
