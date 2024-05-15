@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 13:09:52 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/15 14:11:28 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/15 14:12:11 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putarray(char **array)
 			ft_printf("  %i : \"%s\"\n", i, array[i]);
 		else
 			ft_printf("  %i : \"%s\",\n", i, array[i]);
-		i+;
+		i++;
 	}
 	ft_printf("]\n");
 }
