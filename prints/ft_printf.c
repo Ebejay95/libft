@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:32:58 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/16 08:00:53 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/16 08:02:19 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	filter_not_defined_arg_types(int tc)
 /// @brief 		conclusion of return for any fail occurance
 /// @param args args array to be free'd
 /// @return 	-1
-int	ret_error(va_list args)
+static int	ret_error(va_list args)
 {
 	va_end(args);
 	return (-1);
