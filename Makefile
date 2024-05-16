@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/15 14:53:51 by jeberle          ###   ########.fr        #
+#    Updated: 2024/05/16 08:00:03 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -148,7 +148,7 @@ ft_smartfree.c \
 
 PRINTS_SRCS= \
 ft_color.c \
-ft_fprintf.c \
+ft_printf_fd.c \
 ft_printf.c \
 ft_putarray.c \
 ft_putbits_fd.c \

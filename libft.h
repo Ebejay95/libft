@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/15 14:53:59 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/16 07:59:56 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,7 +208,7 @@ int		ft_unsetenv(const char *name);
 // PRINTS
 // all for error fd unified naming and suppert for fd's return 
 //etc TDO ERROR (perror)
-int		ft_fprintf(int fd, const char *text, ...);
+int		ft_printf_fd(int fd, const char *text, ...);
 char	*ft_color(char *str, char *color);
 int		ft_printf(const char *text, ...);
 void	ft_putarray(char **array);

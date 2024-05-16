@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:32:58 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/08 08:08:30 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/16 08:00:53 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ret_error(va_list args)
 /// @param text 	text to wrap the args prints
 /// @param args 	args array
 /// @return 		write state
-int	formatted_print(const char *text, va_list args)
+static int	formatted_print(const char *text, va_list args)
 {
 	int	prr;
 
