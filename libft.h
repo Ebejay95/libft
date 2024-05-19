@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/16 07:59:56 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/19 15:33:57 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,6 +252,7 @@ size_t	ft_strlcpy(char *trg, const char *src, size_t size);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strdup(const char *s1);
+int		ft_strendswith(char *s, char *check);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);

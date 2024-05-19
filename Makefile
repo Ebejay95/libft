@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/16 08:00:03 by jeberle          ###   ########.fr        #
+#    Updated: 2024/05/19 15:34:09 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -183,6 +183,7 @@ ft_split.c \
 ft_strcat.c \
 ft_strcpy.c \
 ft_strdup.c \
+ft_strendswith.c \
 ft_striteri.c \
 ft_strjoin.c \
 ft_strlcat.c \
