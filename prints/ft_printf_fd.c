@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fprintf.c                                       :+:      :+:    :+:   */
+/*   ft_printf_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 09:41:26 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/04 09:43:42 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/16 08:02:15 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	filter_not_defined_arg_types(int tc)
 /// @brief 		conclusion of return for any fail occurance
 /// @param args args array to be free'd
 /// @return 	-1
-int	ret_error(va_list args)
+static int	ret_error(va_list args)
 {
 	va_end(args);
 	return (-1);
@@ -37,7 +37,7 @@ int	ret_error(va_list args)
 /// @param text 	text to wrap the args prints
 /// @param args 	args array
 /// @return 		write state
-int	formatted_print(int fd, const char *text, va_list args)
+static int	formatted_print(int fd, const char *text, va_list args)
 {
 	int	prr;
 
@@ -83,7 +83,7 @@ static int	pr_loop(int fd, const char *text, va_list args, size_t *idx)
 /// @param text the text conaining placeholders
 /// @param ... 	va_list of args
 /// @return 	write state
-int	ft_fprintf(int fd, const char *text, ...)
+int	ft_printf_fd(int fd, const char *text, ...)
 {
 	va_list		args;
 	size_t		idx;

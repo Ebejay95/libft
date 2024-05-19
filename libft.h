@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/09 13:31:03 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/16 07:59:56 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_isspace(char c);
+size_t	ft_strcchr(const char *s, int c);
 int		ft_str_is_unique(char *str);
 char	*ft_strchr(const char *src, int c);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -93,6 +94,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 // ARRAYS
 void	ft_array_free(char **array);
+void	ft_array_l_free(char **array, size_t len);
 int		ft_array_length(char **array);
 
 // CONVERTER
@@ -206,25 +208,25 @@ int		ft_unsetenv(const char *name);
 // PRINTS
 // all for error fd unified naming and suppert for fd's return 
 //etc TDO ERROR (perror)
-int		ft_fprintf(int fd, const char *text, ...);
+int		ft_printf_fd(int fd, const char *text, ...);
 char	*ft_color(char *str, char *color);
 int		ft_printf(const char *text, ...);
 void	ft_putarray(char **array);
 void	ft_putbits_fd(int fd, int n);
 void	ft_putbits(int n);
-void	ft_putchar_fd(char c, int fd);
+void	ft_putchar_fd(int fd, char c);
 void	ft_putchar(char c);
-int		ft_putcharr_fd(char c, int fd);
+int		ft_putcharr_fd(int fd, char c);
 int		ft_putcharr(char c);
-void	ft_putendl_fd(char *s, int fd);
+void	ft_putendl_fd(int fd, char *s);
 void	ft_putendl(char *s);
 int		ft_putenv_fd(int fd, char *string);
 int		ft_putenv(char *string);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int fd, int n);
 void	ft_putnbr(int n);
 int		ft_putnbrr_fd(int fd, int n);
 int		ft_putnbrr(int n);
-void	ft_putstr_fd(char *s, int fd);
+void	ft_putstr_fd(int fd, char *s);
 void	ft_putstr(char *s);
 int		ft_putstrr_fd(int fd, char *s);
 int		ft_putstrr(char *s);

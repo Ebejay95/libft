@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 21:19:52 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 00:55:29 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/15 10:41:01 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ///				1	stdout	to console
 ///				2	stderr	to error log
 ///				2<	to file in writing status
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(int fd, char *s)
 {
 	while (*s != '\0')
 	{

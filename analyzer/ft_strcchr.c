@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putarray.c                                      :+:      :+:    :+:   */
+/*   ft_strcchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 13:09:52 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/15 14:12:11 by jeberle          ###   ########.fr       */
+/*   Created: 2024/05/15 14:50:08 by jeberle           #+#    #+#             */
+/*   Updated: 2024/05/15 14:53:17 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-void	ft_putarray(char **array)
+size_t	ft_strcchr(const char *s, int c)
 {
-	int	i;
-	int	length;
+	unsigned char	*cs;
+	unsigned char	cc;
+	size_t			n;
 
-	if (array == NULL)
-		return ;
-	length = ft_array_length(array);
-	i = 0;
-	ft_printf("[\n");
-	while (i < length)
+	n = 0;
+	cc = (unsigned char)c;
+	cs = (unsigned char *)s;
+	while (*cs != '\0')
 	{
-		if (i == (length - 1))
-			ft_printf("  %i : \"%s\"\n", i, array[i]);
-		else
-			ft_printf("  %i : \"%s\",\n", i, array[i]);
-		i++;
+		if (cc == *cs)
+			n++;
+		cs++;
 	}
-	ft_printf("]\n");
+	if (cc == '\0')
+		return (n);
+	return (n);
 }

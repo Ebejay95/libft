@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_array_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 13:17:59 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/09 13:25:04 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/05/15 11:07:17 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	ft_array_free(char **array)
 {
 	int	length;
 
-	if(array == NULL)
+	if (array == NULL)
 		return ;
 	length = ft_array_length(array);
 	length--;
-	while (length >= 0 && array[length] != NULL)
+	while (length >= 0)
 	{
 		free(array[length]);
 		length--;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+         #
+#    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/09 13:23:35 by jonathanebe      ###   ########.fr        #
+#    Updated: 2024/05/16 08:00:03 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,6 +76,7 @@ ft_isdigit.c \
 ft_isprint.c \
 ft_isspace.c \
 ft_str_is_unique.c \
+ft_strcchr.c \
 ft_strchr.c \
 ft_strcmp.c \
 ft_strcontains.c \
@@ -90,6 +91,7 @@ ft_substr.c
 
 ARRAYS_SRCS= \
 ft_array_free.c \
+ft_array_l_free.c \
 ft_array_length.c
 
 CONVERTER_SRCS= \
@@ -146,7 +148,7 @@ ft_smartfree.c \
 
 PRINTS_SRCS= \
 ft_color.c \
-ft_fprintf.c \
+ft_printf_fd.c \
 ft_printf.c \
 ft_putarray.c \
 ft_putbits_fd.c \

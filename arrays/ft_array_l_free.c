@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putarray.c                                      :+:      :+:    :+:   */
+/*   ft_array_l_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 13:09:52 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/15 14:12:11 by jeberle          ###   ########.fr       */
+/*   Created: 2024/05/15 11:05:05 by jeberle           #+#    #+#             */
+/*   Updated: 2024/05/15 11:13:04 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-void	ft_putarray(char **array)
+void	ft_array_l_free(char **array, size_t len)
 {
-	int	i;
-	int	length;
+	size_t	i;
 
+	i = 0;
 	if (array == NULL)
 		return ;
-	length = ft_array_length(array);
-	i = 0;
-	ft_printf("[\n");
-	while (i < length)
+	while (i < len)
 	{
-		if (i == (length - 1))
-			ft_printf("  %i : \"%s\"\n", i, array[i]);
-		else
-			ft_printf("  %i : \"%s\",\n", i, array[i]);
+		free(array[i]);
 		i++;
 	}
-	ft_printf("]\n");
+	free(array);
 }
