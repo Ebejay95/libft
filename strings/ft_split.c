@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:31:19 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/25 13:57:15 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/05/23 17:12:33 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,8 @@ char	**ft_split(char const *s, char separator)
 	char			**substrs;
 	unsigned char	cseparator;
 
+	if (!s)
+		return (NULL);
 	cseparator = (unsigned char)separator;
 	substrs = ft_calloc(ft_count_words(s, cseparator) + 1, sizeof(char *));
 	if (substrs == NULL)
