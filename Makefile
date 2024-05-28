@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/23 17:19:59 by jeberle          ###   ########.fr        #
+#    Updated: 2024/05/28 22:42:34 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,8 @@ ft_substr.c
 ARRAYS_SRCS= \
 ft_array_free.c \
 ft_array_l_free.c \
-ft_array_length.c
+ft_array_length.c \
+ft_array_strchr.c
 
 CONVERTER_SRCS= \
 ft_atoi.c \
