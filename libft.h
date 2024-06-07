@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/05 16:03:52 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/07 15:05:40 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,6 +196,7 @@ int		ft_odd(int n);
 //void ft_memtrack_report(void);
 void	ft_bzero(void *start, size_t size);
 void	*ft_calloc(size_t count, size_t size);
+void	ft_condfree(void *data);
 char	*ft_getenv(const char *name);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *trg, const void *src, size_t size);

@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/06/05 15:57:03 by jeberle          ###   ########.fr        #
+#    Updated: 2024/06/07 15:05:57 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,6 +139,7 @@ ft_odd.c \
 MEMORY_SRCS= \
 ft_bzero.c \
 ft_calloc.c \
+ft_condfree.c \
 ft_getenv.c \
 ft_memchr.c \
 ft_memcmp.c \
