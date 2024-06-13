@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/06/07 15:05:57 by jeberle          ###   ########.fr        #
+#    Updated: 2024/06/13 10:16:04 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,6 +80,7 @@ ft_strcchr.c \
 ft_strchr.c \
 ft_strcmp.c \
 ft_strcontains.c \
+ft_strcstr.c \
 ft_strlen.c \
 ft_strncmp.c \
 ft_strnstr.c \

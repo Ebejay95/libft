@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/07 15:05:40 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/13 10:15:36 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int		ft_str_is_unique(char *str);
 char	*ft_strchr(const char *src, int c);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strcontains(char *haystack, char needle);
+size_t	ft_strcstr(const char *hayst, const char *needle);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
