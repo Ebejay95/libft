@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/06/13 10:16:04 by jeberle          ###   ########.fr        #
+#    Updated: 2024/06/13 10:56:06 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -183,6 +183,7 @@ smart_prints_2.c
 
 STRINGS_SRCS= \
 ft_count_words.c \
+ft_count_words_b_str.c \
 ft_split_b_str.c \
 ft_split.c \
 ft_strcat.c \
