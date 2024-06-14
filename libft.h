@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/14 13:10:06 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/14 13:46:07 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,7 +225,7 @@ int		ft_putcharr(char c);
 void	ft_putendl_fd(int fd, char *s);
 void	ft_putendl(char *s);
 int		ft_putenv_fd(int fd, char *string);
-int		ft_putenv(char *string);
+int		ft_putenv(char **envp);
 void	ft_putnbr_fd(int fd, int n);
 void	ft_putnbr(int n);
 int		ft_putnbrr_fd(int fd, int n);

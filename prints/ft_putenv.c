@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 10:32:13 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/15 10:08:33 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/14 13:45:34 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,14 @@
 //	}
 //}
 
-int	ft_putenv(char *str)
+int	ft_putenv(char **envp)
 {
-	extern char	**environ;
 	int			i;
-	int			vlen;
-	char		*spanname;
 
 	i = 0;
-	while (environ[i] != NULL)
+	while (envp[i] != NULL)
 	{
-		spanname = ft_strchr(environ[i], '=');
-		if (spanname != NULL)
-		{
-			vlen = spanname - environ[i];
-			if (ft_strncmp(environ[i], str, vlen) == 0 && str[vlen] == '\0')
-				return (ft_putstrr(spanname + 1));
-		}
+		ft_printf(envp[i]);
 		i++;
 	}
 	return (0);
