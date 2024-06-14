@@ -6,30 +6,28 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 10:32:28 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 16:40:27 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/14 12:18:52 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-int	ft_setenv(const char *name, const char *value, int overwrite)
+int	ft_setenv(char **envp, char *name, char *value)
 {
-	extern char	**environ;
 	int			i;
-	int			vlen;
-	char		*spanname;
+	char		*envline;
 
+	if (!envp || !name || !value)
+		return (-1);
 	i = 0;
-	while (environ[i] != NULL)
+	envline = ft_calloc((ft_strlen(name) + ft_strlen(value) + 2), sizeof(char));
+	if (!envline)
+		return (-1);
+	ft_strcpy(envline, name);
+	ft_strcat(envline, "=");
+	ft_strcat(envline, value);
+	while ()
 	{
-		spanname = ft_strchr(environ[i], '=');
-		if (spanname != NULL)
-		{
-			vlen = spanname - environ[i];
-			if (ft_strncmp(environ[i], name, vlen) == 0 && name[vlen] == '\0')
-				return (ft_strdup(spanname + 1));
-		}
-		i++;
+		
 	}
-	return (NULL);
 }
