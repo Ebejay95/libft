@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 10:32:47 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/25 00:23:18 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/14 13:21:44 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,6 @@
 
 int	ft_unsetenv(const char *name)
 {
+	(void)name;
+	return (0);
 }
