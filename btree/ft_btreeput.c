@@ -6,17 +6,41 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:24:40 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/19 11:33:22 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/19 16:57:14 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-void	ft_btreeput(t_btree *tree, void (*treeprint)(void *))
+static void	puttree(t_btree *tree, void (*cb)(void *), int depth, int is_last)
+{
+	int	i;
+
+	i = 0;
+	if (tree == NULL)
+		return ;
+	while (i < (depth - 1))
+	{
+		ft_printf("\033[0;34m│   \033[0m");
+		i++;
+	}
+	if (depth > 0)
+	{
+		if (is_last)
+			ft_printf("\033[0;34m└─\033[0m");
+		else
+			ft_printf("\033[0;34m├─\033[0m");
+	}
+	cb(tree->content);
+	if (tree->child)
+		puttree(tree->child, cb, depth + 1, tree->next == NULL);
+	if (tree->next)
+		puttree(tree->next, cb, depth, 0);
+}
+
+void	ft_btreeput(t_btree *tree, void (*cb)(void *))
 {
 	if (tree == NULL)
 		return ;
-	treeprint(tree->content);
-	ft_btreeput(tree->child, treeprint);
-	ft_btreeput(tree->next, treeprint);
+	puttree(tree, cb, 0, 1);
 }
