@@ -6,21 +6,21 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 16:51:26 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/19 16:55:51 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/19 17:01:24 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-void	ft_btreeadd_child(t_btree *parent, t_btree *new)
+void	ft_btreeadd_child(t_btree **parent, t_btree *new)
 {
 	if (new == NULL)
 		return ;
-	if (parent == NULL)
+	if (parent == NULL || *parent == NULL)
 	{
-		parent = new;
+		*parent = new;
 		return ;
 	}
-	if (parent->child == NULL)
-		parent->child = new;
+	if ((*parent)->child == NULL)
+		(*parent)->child = new;
 }
