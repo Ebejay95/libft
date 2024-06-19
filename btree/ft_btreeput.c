@@ -6,13 +6,13 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:24:40 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/19 17:07:40 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/19 21:47:29 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-static void	puttree(t_btree *tree, void (*cb)(void *), int depth, int is_last)
+static void	puttree(t_btree **tree, void (*cb)(void *), int depth, int is_last)
 {
 	int	i;
 
@@ -31,14 +31,14 @@ static void	puttree(t_btree *tree, void (*cb)(void *), int depth, int is_last)
 		else
 			ft_printf("\033[0;34m├─\033[0m");
 	}
-	cb(tree->content);
-	if (tree->child)
-		puttree(tree->child, cb, depth + 1, tree->next == NULL);
-	if (tree->next)
-		puttree(tree->next, cb, depth, 0);
+	cb((*tree)->content);
+	if ((*tree)->child)
+		puttree(&((*tree)->child), cb, depth + 1, (*tree)->next == NULL);
+	if ((*tree)->next)
+		puttree(&((*tree)->next), cb, depth, 0);
 }
 
-void	ft_btreeput(t_btree *tree, void (*cb)(void *))
+void	ft_btreeput(t_btree **tree, void (*cb)(void *))
 {
 	if (tree == NULL)
 		return ;
