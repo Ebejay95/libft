@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:24:40 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/19 16:59:04 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/19 17:07:40 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ static void	puttree(t_btree *tree, void (*cb)(void *), int depth, int is_last)
 		puttree(tree->next, cb, depth, 0);
 }
 
-void	ft_btreeput(t_btree **tree, void (*cb)(void *))
+void	ft_btreeput(t_btree *tree, void (*cb)(void *))
 {
-	if (tree == NULL || *tree == NULL)
+	if (tree == NULL)
 		return ;
-	puttree(*tree, cb, 0, 1);
+	puttree(tree, cb, 0, 1);
 }
