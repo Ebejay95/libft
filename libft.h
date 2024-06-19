@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/14 13:46:07 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/19 11:31:30 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,13 @@ typedef struct s_dlist
 	struct s_dlist	*prev;
 	struct s_dlist	*next;
 }	t_dlist;
+
+typedef struct s_btree
+{
+	void			*content;
+	struct s_btree	*child;
+	struct s_btree	*next;
+}	t_btree;
 
 // HELPERSHIT
 char	*build_line(char *workstring);
@@ -99,6 +106,17 @@ void	ft_array_l_free(char **array, size_t len);
 int		ft_array_length(char **array);
 char	*ft_array_strchr(char **array, char c);
 int		ft_array_strcchr(char **array, char c);
+
+// BINARY_TREE
+void	ft_btreeadd(t_btree *parent, t_btree *new);
+t_btree	*ft_btreenew(void *content);
+void	ft_btreeput(t_btree *tree, void (*treeprint)(void *));
+//void ft_btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));
+//t_btree *ft_btree_search(t_btree *root, void *data_ref, 
+//int (*cmpf)(void *, void *));
+//void ft_btree_inorder(t_btree *root, void (*applyf)(void *));
+//void ft_btree_remove(t_btree **root, void *data_ref, int (*cmpf)(void *,/
+//void *), void (*freef)(void *));
 
 // CONVERTER
 //double ft_atof(const char *str);
@@ -308,19 +326,6 @@ char	*prep_next(char *workstring);
 //size_t *output_length);
 //unsigned char *ft_base64_decode(const char *data, size_t input_length, 
 //size_t *output_length);
-
-// BINARY_TREE
-//typedef struct s_btree {
-//    void *content;
-//    struct s_btree *left;
-//    struct s_btree *right;
-//} t_btree;
-//void ft_btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));
-//t_btree *ft_btree_search(t_btree *root, void *data_ref, 
-//int (*cmpf)(void *, void *));
-//void ft_btree_inorder(t_btree *root, void (*applyf)(void *));
-//void ft_btree_remove(t_btree **root, void *data_ref, int (*cmpf)(void *,/
-//void *), void (*freef)(void *));
 
 // HASH_TABLE
 //typedef struct s_hashnode {

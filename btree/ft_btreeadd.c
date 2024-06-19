@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_btreeadd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 12:56:36 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/19 10:51:36 by jeberle          ###   ########.fr       */
+/*   Created: 2024/06/19 11:11:40 by jeberle           #+#    #+#             */
+/*   Updated: 2024/06/19 11:33:06 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-/// @brief 		delete a node of a linked list
-/// @algorithm	1)	check the existence of lst and del
-///				2)	delete node with the deletion callback for its content
-///					and the free'ing of the associating pointer
-/// @param lst	the linked list
-/// @param del	the content deletion callback function
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_btreeadd(t_btree *parent, t_btree *new)
 {
-	if (lst == NULL || del == NULL)
+	t_btree	*current;
+
+	if (new == NULL || parent == NULL)
 		return ;
-	del(lst->content);
-	free(lst);
+	if (parent->next == NULL)
+		parent->next = new;
+	else
+	{
+		current = parent;
+		while (current->child != NULL)
+			current = current->child;
+		current->child = new;
+	}
 }
