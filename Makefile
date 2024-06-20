@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/06/19 16:55:07 by jeberle          ###   ########.fr        #
+#    Updated: 2024/06/20 10:41:33 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,6 +100,7 @@ ft_array_strchr.c
 BTREE_SRCS= \
 ft_btreeadd_child.c \
 ft_btreeadd_next.c \
+ft_btreeclear.c \
 ft_btreenew.c \
 ft_btreeput.c
 

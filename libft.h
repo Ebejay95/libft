@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/19 21:46:47 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/20 10:41:48 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ int		ft_array_strcchr(char **array, char c);
 // BINARY_TREE
 void	ft_btreeadd_next(t_btree *parent, t_btree *new);
 void	ft_btreeadd_child(t_btree *parent, t_btree *new);
+void	ft_btreeclear(t_btree **root);
 t_btree	*ft_btreenew(void *content);
 void	ft_btreeput(t_btree **tree, void (*treeprint)(void *));
 //void ft_btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));

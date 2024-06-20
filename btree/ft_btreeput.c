@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:24:40 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/19 21:47:29 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/20 10:39:51 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	puttree(t_btree **tree, void (*cb)(void *), int depth, int is_last)
 	int	i;
 
 	i = 0;
-	if (tree == NULL)
+	if (tree == NULL || (*tree) == NULL)
 		return ;
 	while (i < (depth - 1))
 	{
