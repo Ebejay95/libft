@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/20 10:41:48 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/06/28 15:34:54 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,7 +283,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split_b_str(char const *s, char *separator);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strndup(const char *s, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strrev(const char *s1);
 char	*ft_strreplace(char *h, char *n, char *r);

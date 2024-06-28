@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/06/20 10:41:33 by jeberle          ###   ########.fr        #
+#    Updated: 2024/06/28 15:35:15 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -204,6 +204,7 @@ ft_strjoin.c \
 ft_strlcat.c \
 ft_strlcpy.c \
 ft_strmapi.c \
+ft_strndup.c \
 ft_strreplace.c \
 ft_strreplaceall.c \
 ft_strrev.c \
