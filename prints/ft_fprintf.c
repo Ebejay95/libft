@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_fd.c                                     :+:      :+:    :+:   */
+/*   ft_fprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 09:41:26 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/16 08:02:15 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/07/18 13:47:57 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static int	pr_loop(int fd, const char *text, va_list args, size_t *idx)
 /// @param text the text conaining placeholders
 /// @param ... 	va_list of args
 /// @return 	write state
-int	ft_printf_fd(int fd, const char *text, ...)
+int	ft_fprintf(int fd, const char *text, ...)
 {
 	va_list		args;
 	size_t		idx;
