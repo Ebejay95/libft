@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:31:11 by jeberle           #+#    #+#             */
-/*   Updated: 2024/07/25 04:43:12 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/07/25 04:47:59 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,19 @@ size_t	ft_strncpy(char *trg, const char *src, size_t size)
 	size_t	len;
 	size_t	i;
 
-	len = ft_strlen(src);
-	if (size == 0)
-		return (len);
+	len = 0;
+	while (src[len] != '\0')
+		len++;
 	i = 0;
-	while (i < size - 1 && src[i] != '\0')
+	while (i < size && src[i] != '\0')
 	{
 		trg[i] = src[i];
 		i++;
 	}
-	if (size > 0)
+	while (i < size)
+	{
 		trg[i] = '\0';
+		i++;
+	}
 	return (len);
 }
