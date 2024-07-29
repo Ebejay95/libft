@@ -6,7 +6,7 @@
 /*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/07/29 12:20:59 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/07/29 12:21:52 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,13 @@ typedef struct s_dlist
 
 
 /* Helpershit */
+typedef struct s_btree
+{
+	void			*content;
+	struct s_btree	*child;
+	struct s_btree	*next;
+}	t_btree;
+
 char	*build_line(char *workstring);
 char	*build_workstring(int fd, char *workstring, int *state, char *range);
 char	*prep_next(char *workstring);
@@ -84,6 +91,7 @@ int		ft_str_is_unique(char *str);
 char	*ft_strchr(const char *src, int c);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strcontains(char *haystack, char needle);
+size_t	ft_strcstr(const char *hayst, const char *needle);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -97,6 +105,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	ft_array_free(char **array);
 void	ft_array_l_free(char **array, size_t len);
 int		ft_array_length(char **array);
+char	*ft_array_strchr(char **array, char c);
+int		ft_array_strcchr(char **array, char c);
+
+// BINARY_TREE
+void	ft_btreeadd_next(t_btree *parent, t_btree *new);
+void	ft_btreeadd_child(t_btree *parent, t_btree *new);
+void	ft_btreeclear(t_btree **root);
+t_btree	*ft_btreenew(void *content);
+void	ft_btreeput(t_btree **tree, void (*treeprint)(void *));
+//void ft_btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));
+//t_btree *ft_btree_search(t_btree *root, void *data_ref, 
+//int (*cmpf)(void *, void *));
+//void ft_btree_inorder(t_btree *root, void (*applyf)(void *));
+//void ft_btree_remove(t_btree **root, void *data_ref, int (*cmpf)(void *,/
+//void *), void (*freef)(void *));
 
 // CONVERTER
 //double ft_atof(const char *str);
@@ -195,6 +218,7 @@ int		ft_odd(int n);
 //void ft_memtrack_report(void);
 void	ft_bzero(void *start, size_t size);
 void	*ft_calloc(size_t count, size_t size);
+void	ft_condfree(void *data);
 char	*ft_getenv(const char *name);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *trg, const void *src, size_t size);
@@ -202,14 +226,14 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memmove(void *trg, const void *src, size_t size);
 void	*ft_memset(void *start, int fill, size_t size);
 void	*ft_realloc(void *ptr, size_t size);
-int		ft_setenv(const char *name, const char *value, int overwrite);
+int		ft_setenv(char **envp, char *name, char *value);
 char	*ft_smartfree(char *s, int proc);
 int		ft_unsetenv(const char *name);
 
 // PRINTS
 // all for error fd unified naming and suppert for fd's return 
 //etc TDO ERROR (perror)
-int		ft_printf_fd(int fd, const char *text, ...);
+int		ft_fprintf(int fd, const char *text, ...);
 char	*ft_color(char *str, char *color);
 int		ft_printf(const char *text, ...);
 void	ft_putarray(char **array);
@@ -222,7 +246,7 @@ int		ft_putcharr(char c);
 void	ft_putendl_fd(int fd, char *s);
 void	ft_putendl(char *s);
 int		ft_putenv_fd(int fd, char *string);
-int		ft_putenv(char *string);
+int		ft_putenv(char **envp);
 void	ft_putnbr_fd(int fd, int n);
 void	ft_putnbr(int n);
 int		ft_putnbrr_fd(int fd, int n);
@@ -246,6 +270,7 @@ char	*get_next_line(int fd);
 //char *ft_strpbrk(const char *s, const char *accept);
 //char *ft_strndup(const char *s1, size_t n);
 size_t	ft_count_words(char const *s, char c);
+size_t	ft_count_words_b_str(char const *s, char *str);
 size_t	ft_strcpy(char *trg, const char *src);
 size_t	ft_strcat(char *trg, const char *src);
 size_t	ft_strlcat(char *trg, const char *src, size_t size);
@@ -253,11 +278,14 @@ size_t	ft_strlcpy(char *trg, const char *src, size_t size);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strdup(const char *s1);
+int		ft_strendswith(char *s, char *check);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split_b_str(char const *s, char *separator);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+size_t	ft_strncpy(char *trg, const char *src, size_t size);
+char	*ft_strndup(const char *s, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strrev(const char *s1);
 char	*ft_strreplace(char *h, char *n, char *r);
@@ -302,19 +330,6 @@ char	*prep_next(char *workstring);
 //size_t *output_length);
 //unsigned char *ft_base64_decode(const char *data, size_t input_length, 
 //size_t *output_length);
-
-// BINARY_TREE
-//typedef struct s_btree {
-//    void *content;
-//    struct s_btree *left;
-//    struct s_btree *right;
-//} t_btree;
-//void ft_btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));
-//t_btree *ft_btree_search(t_btree *root, void *data_ref, 
-//int (*cmpf)(void *, void *));
-//void ft_btree_inorder(t_btree *root, void (*applyf)(void *));
-//void ft_btree_remove(t_btree **root, void *data_ref, int (*cmpf)(void *,/
-//void *), void (*freef)(void *));
 
 // HASH_TABLE
 //typedef struct s_hashnode {

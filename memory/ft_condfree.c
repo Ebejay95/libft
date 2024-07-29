@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsetenv.c                                      :+:      :+:    :+:   */
+/*   ft_condfree.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 10:32:47 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/14 13:21:44 by jeberle          ###   ########.fr       */
+/*   Created: 2024/06/07 15:04:07 by jeberle           #+#    #+#             */
+/*   Updated: 2024/06/07 15:05:11 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-int	ft_unsetenv(const char *name)
+void	ft_condfree(void *data)
 {
-	(void)name;
-	return (0);
+	if (data)
+		free(data);
 }

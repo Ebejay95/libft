@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/05/16 08:00:03 by jeberle          ###   ########.fr        #
+#    Updated: 2024/07/25 04:43:38 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ DEPFLAGS=-MMD -MP
 OBJ_DIR := ./obj
 DEP_DIR := $(OBJ_DIR)/.deps
 INC_DIRS := .
-SRC_DIRS := analyzer arrays converter lists math memory prints strings
+SRC_DIRS := analyzer arrays btree converter lists math memory prints strings
 
 vpath %.c $(foreach dir,$(SRC_DIRS),$(dir))
 vpath %.h $(INC_DIRS)
@@ -80,6 +80,7 @@ ft_strcchr.c \
 ft_strchr.c \
 ft_strcmp.c \
 ft_strcontains.c \
+ft_strcstr.c \
 ft_strlen.c \
 ft_strncmp.c \
 ft_strnstr.c \
@@ -92,7 +93,16 @@ ft_substr.c
 ARRAYS_SRCS= \
 ft_array_free.c \
 ft_array_l_free.c \
-ft_array_length.c
+ft_array_length.c \
+ft_array_strcchr.c \
+ft_array_strchr.c
+
+BTREE_SRCS= \
+ft_btreeadd_child.c \
+ft_btreeadd_next.c \
+ft_btreeclear.c \
+ft_btreenew.c \
+ft_btreeput.c
 
 CONVERTER_SRCS= \
 ft_atoi.c \
@@ -137,18 +147,21 @@ ft_odd.c \
 MEMORY_SRCS= \
 ft_bzero.c \
 ft_calloc.c \
+ft_condfree.c \
 ft_getenv.c \
 ft_memchr.c \
 ft_memcmp.c \
 ft_memcpy.c \
 ft_memmove.c \
 ft_memset.c \
+ft_setenv.c \
+ft_unsetenv.c \
 ft_realloc.c \
 ft_smartfree.c \
 
 PRINTS_SRCS= \
 ft_color.c \
-ft_printf_fd.c \
+ft_fprintf.c \
 ft_printf.c \
 ft_putarray.c \
 ft_putbits_fd.c \
@@ -179,15 +192,20 @@ smart_prints_2.c
 
 STRINGS_SRCS= \
 ft_count_words.c \
+ft_count_words_b_str.c \
+ft_split_b_str.c \
 ft_split.c \
 ft_strcat.c \
 ft_strcpy.c \
 ft_strdup.c \
+ft_strendswith.c \
 ft_striteri.c \
 ft_strjoin.c \
 ft_strlcat.c \
 ft_strlcpy.c \
 ft_strmapi.c \
+ft_strncpy.c \
+ft_strndup.c \
 ft_strreplace.c \
 ft_strreplaceall.c \
 ft_strrev.c \
@@ -199,7 +217,7 @@ ft_toupper.c
 #--------------                      OBJECTS                      -------------#
 #------------------------------------------------------------------------------#
 
-OBJECTS := $(addprefix $(OBJ_DIR)/, $(ANALYZER_SRCS:%.c=%.o) $(ARRAYS_SRCS:%.c=%.o) $(CONVERTER_SRCS:%.c=%.o) $(LISTS_SRCS:%.c=%.o) $(MATH_SRCS:%.c=%.o) $(MEMORY_SRCS:%.c=%.o) $(PRINTS_SRCS:%.c=%.o) $(STRINGS_SRCS:%.c=%.o))
+OBJECTS := $(addprefix $(OBJ_DIR)/, $(ANALYZER_SRCS:%.c=%.o) $(ARRAYS_SRCS:%.c=%.o) $(BTREE_SRCS:%.c=%.o) $(CONVERTER_SRCS:%.c=%.o) $(LISTS_SRCS:%.c=%.o) $(MATH_SRCS:%.c=%.o) $(MEMORY_SRCS:%.c=%.o) $(PRINTS_SRCS:%.c=%.o) $(STRINGS_SRCS:%.c=%.o))
 
 #------------------------------------------------------------------------------#
 #--------------                      COMPILE                      -------------#

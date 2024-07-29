@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putenv.c                                        :+:      :+:    :+:   */
+/*   ft_count_words_b_str.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 10:32:13 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/14 13:45:34 by jeberle          ###   ########.fr       */
+/*   Created: 2024/06/13 10:19:05 by jeberle           #+#    #+#             */
+/*   Updated: 2024/06/13 10:57:18 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-//void	ft_putallenv(char **env)
-//{
-//	int	envdx;
-//	char	*print;
-//
-//	envdx = 0;
-//	while (env[envdx] != 0)
-//	{
-//		print = ft_color(env[envdx], YELLOW);
-//		ft_printf(print);
-//		ft_printf("\n");
-//		free(print);
-//		envdx++;
-//	}
-//}
-
-int	ft_putenv(char **envp)
+size_t	ft_count_words_b_str(char const *s, char *str)
 {
-	int			i;
+	size_t	count;
+	int		i;
+	int		state;
 
+	state = 1;
+	count = 0;
 	i = 0;
-	while (envp[i] != NULL)
+	while (s[i] != '\0')
 	{
-		ft_printf(envp[i]);
+		if (ft_strncmp(&s[i], str, ft_strlen(str)) == 0 && state == 0)
+		{
+			state = 1;
+			count++;
+			i += ft_strlen(str) - 1;
+		}
+		else if (ft_strncmp(&s[i], str, ft_strlen(str)) == 0)
+			i += ft_strlen(str) - 1;
+		else if (state == 1)
+			state = 0;
 		i++;
 	}
-	return (0);
+	if (state == 0)
+		count++;
+	return (count);
 }

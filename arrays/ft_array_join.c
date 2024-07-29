@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsetenv.c                                      :+:      :+:    :+:   */
+/*   ft_array_join.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 10:32:47 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/14 13:21:44 by jeberle          ###   ########.fr       */
+/*   Created: 2024/05/19 18:48:44 by jeberle           #+#    #+#             */
+/*   Updated: 2024/05/19 18:51:22 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-int	ft_unsetenv(const char *name)
+char	*ft_array_join(char **array)
 {
-	(void)name;
-	return (0);
+	int		length;
+	size_t	i;
+
+	i = 0;
+	if (array == NULL)
+		return ;
+	length = ft_array_length(array);
+	if (array == NULL)
+		return ;
+	while (i < len)
+	{
+		i++;
+	}
 }

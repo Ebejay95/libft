@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsetenv.c                                      :+:      :+:    :+:   */
+/*   ft_array_strchr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 10:32:47 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/14 13:21:44 by jeberle          ###   ########.fr       */
+/*   Created: 2024/05/28 22:41:36 by jeberle           #+#    #+#             */
+/*   Updated: 2024/05/28 22:43:38 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-int	ft_unsetenv(const char *name)
+char	*ft_array_strchr(char **array, char c)
 {
-	(void)name;
-	return (0);
+	int		length;
+	int		i;
+	char	*found;
+
+	if (array == NULL)
+		return (NULL);
+	i = 0;
+	found = NULL;
+	length = ft_array_length(array);
+	while (length > i && found == NULL)
+	{
+		found = ft_strchr(array[i], c);
+		i++;
+	}
+	return (found);
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsetenv.c                                      :+:      :+:    :+:   */
+/*   ft_btreeclear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 10:32:47 by jeberle           #+#    #+#             */
-/*   Updated: 2024/06/14 13:21:44 by jeberle          ###   ########.fr       */
+/*   Created: 2024/06/20 10:41:02 by jeberle           #+#    #+#             */
+/*   Updated: 2024/06/20 10:42:35 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../libft.h"
 
-int	ft_unsetenv(const char *name)
+void	ft_btreeclear(t_btree **root)
 {
-	(void)name;
-	return (0);
+	if (root == NULL || *root == NULL)
+		return ;
+	ft_btreeclear(&((*root)->child));
+	ft_btreeclear(&((*root)->next));
+	free(*root);
+	*root = NULL;
 }
