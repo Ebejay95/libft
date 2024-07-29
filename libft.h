@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/05/16 07:59:56 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/07/29 12:20:59 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ typedef struct s_dlist
 	struct s_dlist	*next;
 }	t_dlist;
 
-// HELPERSHIT
+
+/* Helpershit */
 char	*build_line(char *workstring);
 char	*build_workstring(int fd, char *workstring, int *state, char *range);
 char	*prep_next(char *workstring);
