@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/07/25 04:44:00 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/07/29 20:15:03 by jonathanebe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_dlist
 	struct s_dlist	*next;
 }	t_dlist;
 
+/* Helpershit */
 typedef struct s_btree
 {
 	void			*content;
@@ -57,7 +58,6 @@ typedef struct s_btree
 	struct s_btree	*next;
 }	t_btree;
 
-// HELPERSHIT
 char	*build_line(char *workstring);
 char	*build_workstring(int fd, char *workstring, int *state, char *range);
 char	*prep_next(char *workstring);
@@ -94,6 +94,7 @@ size_t	ft_strcstr(const char *hayst, const char *needle);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strncat(char *dest, const char *src, size_t n);
 char	*ft_strpbrk(const char *s, const char *charset);
 char	*ft_strrchr(const char *src, int c);
 size_t	ft_strspn(const char *s, const char *charset);
