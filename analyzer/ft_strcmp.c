@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:26:11 by jeberle           #+#    #+#             */
-/*   Updated: 2024/04/05 13:27:14 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/07/31 19:40:50 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,18 @@
 ///							3)	return 0 if nothing was found
 /// @param s1 				string comparison reference
 /// @param s2				string to be compared
-/// @return  us1 - us2 | 0	the difference in decimal ascii numbers	
+/// @return  us1 - us2 | 0	the difference in decimal ascii numbers
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned char	us1;
 	unsigned char	us2;
 
+	if (s1 == NULL && s2 == NULL)
+		return (0);
+	if (s1 == NULL)
+		return (-1);
+	if (s2 == NULL)
+		return (1);
 	while (*s1 != '\0' || *s2 != '\0')
 	{
 		us1 = (unsigned char)*s1;
