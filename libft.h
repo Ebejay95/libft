@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/07/29 20:15:03 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/08/01 12:37:12 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	ft_btreeclear(t_btree **root);
 t_btree	*ft_btreenew(void *content);
 void	ft_btreeput(t_btree **tree, void (*treeprint)(void *));
 //void ft_btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));
-//t_btree *ft_btree_search(t_btree *root, void *data_ref, 
+//t_btree *ft_btree_search(t_btree *root, void *data_ref,
 //int (*cmpf)(void *, void *));
 //void ft_btree_inorder(t_btree *root, void (*applyf)(void *));
 //void ft_btree_remove(t_btree **root, void *data_ref, int (*cmpf)(void *,/
@@ -125,7 +125,8 @@ void	ft_btreeput(t_btree **tree, void (*treeprint)(void *));
 //double ft_atof(const char *str);
 //char *ft_ulltoa_base(unsigned long long value, const char *base);
 //char *ft_dtoa(double n, unsigned int precision);
-int		ft_atoi(const char *str, int *error);
+int		ft_atoi(const char *str);
+int		ft_atoistate(const char *str, int *error);
 char	*ft_itoa(int n);
 char	*ft_strbase(unsigned long long input, const char *base);
 
@@ -210,7 +211,7 @@ int		ft_odd(int n);
 // MEMORY
 //void *ft_aligned_alloc(size_t alignment, size_t size);
 //void ft_memcheck(const void *ptr, const char *file, int line);
-//void *ft_memcpy_safe(void *destination, const void *source, 
+//void *ft_memcpy_safe(void *destination, const void *source,
 //size_t size, size_t dest_size);
 //void ft_memswap(void *ptr1, void *ptr2, size_t size);
 //void ft_memtrack_start(void);
@@ -231,7 +232,7 @@ char	*ft_smartfree(char *s, int proc);
 int		ft_unsetenv(const char *name);
 
 // PRINTS
-// all for error fd unified naming and suppert for fd's return 
+// all for error fd unified naming and suppert for fd's return
 //etc TDO ERROR (perror)
 int		ft_fprintf(int fd, const char *text, ...);
 char	*ft_color(char *str, char *color);
@@ -313,9 +314,9 @@ char	*prep_next(char *workstring);
 //ssize_t ft_send(int sockfd, const void *buf, size_t len, int flags);
 //ssize_t ft_recv(int sockfd, void *buf, size_t len, int flags);
 //int ft_close(int sockfd);
-//ssize_t ft_sendto(int sockfd, const void *buf, size_t len, int flags, 
+//ssize_t ft_sendto(int sockfd, const void *buf, size_t len, int flags,
 //const struct sockaddr *dest_addr, socklen_t addrlen);
-//ssize_t ft_recvfrom(int sockfd, void *buf, size_t len, int flags, struct 
+//ssize_t ft_recvfrom(int sockfd, void *buf, size_t len, int flags, struct
 //sockaddr *src_addr, socklen_t *addrlen);
 
 // TIME
@@ -326,9 +327,9 @@ char	*prep_next(char *workstring);
 // HASH
 //unsigned long ft_hash_string(const char *str);
 //int ft_levenshtein(const char *s1, const char *s2);
-//char *ft_base64_encode(const unsigned char *data, size_t input_length, 
+//char *ft_base64_encode(const unsigned char *data, size_t input_length,
 //size_t *output_length);
-//unsigned char *ft_base64_decode(const char *data, size_t input_length, 
+//unsigned char *ft_base64_decode(const char *data, size_t input_length,
 //size_t *output_length);
 
 // HASH_TABLE

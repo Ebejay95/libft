@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+         #
+#    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/07/29 20:16:02 by jonathanebe      ###   ########.fr        #
+#    Updated: 2024/08/01 12:36:41 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,6 +106,7 @@ ft_btreeput.c
 
 CONVERTER_SRCS= \
 ft_atoi.c \
+ft_atoistate.c \
 ft_itoa.c \
 ft_strbase.c
 
