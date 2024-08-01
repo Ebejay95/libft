@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/08/01 12:37:23 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/08/01 12:41:37 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static int	safe_atoi_handler(long long *i, int *e, const char *s, int *ms)
 ///
 /// @param str
 /// @return 	int i || 0
-int	ft_atoi(const char *str, int *error)
+int	ft_atoistate(const char *str, int *error)
 {
 	long long	i;
 	int			ms;
