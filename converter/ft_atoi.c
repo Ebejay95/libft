@@ -6,23 +6,11 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:37:30 by jeberle           #+#    #+#             */
-/*   Updated: 2024/08/01 12:37:57 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/08/01 12:40:59 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-///TODO:		set in own file after evals
-/// @brief		checks if a char is an char declared as a whitespace character
-///				by comparing the ascii int values in their ranges
-/// @param c 	the char to check
-/// @return 	0 || 1 depending on the char
-static int	ft_isspace(char c)
-{
-	if (c == 32 || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
-}
 
 /// @brief 		provides a int by a string that follows a strict format
 /// 			it can contain leading whitespace chars, one sign (+ || -)
