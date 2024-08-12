@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 09:13:39 by jeberle           #+#    #+#             */
-/*   Updated: 2024/07/24 08:53:01 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/08/12 20:44:28 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,23 @@
 void	*ft_realloc(void *ptr, size_t size)
 {
 	void	*alloc;
+	size_t	old_size;
 
-	if (ptr == NULL)
+	if (size == 0)
 	{
-		alloc = ft_calloc(size, 1);
-		if (!alloc)
-			return (NULL);
-	}
-	else
-	{
-		alloc = ft_calloc(size, 1);
-		ft_memcpy(alloc, ptr, size);
 		free(ptr);
+		return (NULL);
 	}
+	if (ptr == NULL)
+		return (ft_calloc(size, 1));
+	old_size = sizeof(ptr);
+	alloc = ft_calloc(size, 1);
+	if (!alloc)
+		return (NULL);
+	if ((old_size < size))
+		ft_memcpy(alloc, ptr, old_size);
+	else
+		ft_memcpy(alloc, ptr, size);
+	free(ptr);
 	return (alloc);
 }
