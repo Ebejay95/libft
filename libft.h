@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/08/12 22:07:49 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/08/15 19:37:39 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,6 +226,7 @@ void	*ft_memcpy(void *trg, const void *src, size_t size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memmove(void *trg, const void *src, size_t size);
 void	*ft_memset(void *start, int fill, size_t size);
+void	ft_multifree(char *a, char *b, char *c, char *d);
 void	*ft_realloc(void *ptr, size_t size);
 int		ft_setenv(char **envp, char *name, char *value);
 char	*ft_smartfree(char *s, int proc);

@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/08/01 12:36:41 by jeberle          ###   ########.fr        #
+#    Updated: 2024/08/15 19:37:01 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -155,6 +155,7 @@ ft_memcmp.c \
 ft_memcpy.c \
 ft_memmove.c \
 ft_memset.c \
+ft_multifree.c \
 ft_setenv.c \
 ft_unsetenv.c \
 ft_realloc.c \
