@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:56:36 by jeberle           #+#    #+#             */
-/*   Updated: 2024/08/14 04:53:08 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/08/16 13:54:32 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	if (lst->content)
 	{
 		del(lst->content);
-		if (lst->content)
-			free(lst->content);
 	}
 	free(lst);
 }
