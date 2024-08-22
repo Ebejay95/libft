@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/08/22 15:42:05 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/08/22 18:31:14 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,8 @@ int		ft_atoi(const char *str);
 int		ft_atoistate(const char *str, int *error);
 char	*ft_itoa(int n);
 char	*ft_strbase(unsigned long long input, const char *base);
+long	ft_atol(const char *str);
+char	*ft_ltoa(long n);
 
 // LISTS
 //void ft_lstinsert_before(t_list **lst, t_list *next, t_list *new);

@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 11:02:33 by jeberle           #+#    #+#              #
-#    Updated: 2024/08/15 19:37:01 by jeberle          ###   ########.fr        #
+#    Updated: 2024/08/22 18:30:35 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,8 +106,10 @@ ft_btreeput.c
 
 CONVERTER_SRCS= \
 ft_atoi.c \
+ft_atol.c \
 ft_atoistate.c \
 ft_itoa.c \
+ft_ltoa.c \
 ft_strbase.c
 
 LISTS_SRCS= \
