@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:38:35 by jeberle           #+#    #+#             */
-/*   Updated: 2024/08/15 19:37:39 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/08/22 15:39:07 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@
 #  define BUFFER_SIZE 1024
 # endif
 
+// Define Colours
+# define RED "\033[0;31m"
+# define G "\033[0;32m"
+# define B "\033[0;34m"
+# define Y "\033[0;93m"
+# define C "\033[0;36m"
+# define M "\033[0;35m"
+# define W "\033[0;97m"
+# define D "\033[0m"
 # define RED "\x1b[31m"
 # define GREEN "\x1b[32m"
 # define YELLOW "\x1b[33m"
