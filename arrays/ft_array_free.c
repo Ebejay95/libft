@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 13:17:59 by jonathanebe       #+#    #+#             */
-/*   Updated: 2024/05/15 11:07:17 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/09/23 16:02:03 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	ft_array_free(char **array)
 	while (length >= 0)
 	{
 		free(array[length]);
+		array[length] = NULL;
 		length--;
 	}
 	free(array);
+	array = NULL;
 }
+
