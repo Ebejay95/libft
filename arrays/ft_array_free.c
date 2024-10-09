@@ -29,4 +29,3 @@ void	ft_array_free(char **array)
 	free(array);
 	array = NULL;
 }
-
