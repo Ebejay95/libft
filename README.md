@@ -1,5 +1,3 @@
-![Libft Image](https://i.imgflip.com/6vumy5.jpg)
-
 # Libft
 
 **The basic ingredients for any upcoming C project.**
